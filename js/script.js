@@ -218,7 +218,7 @@ function initCountdown(launchDateString) {
         const minutes = Math.floor((totalSeconds % 3600) / 60);
         const seconds = totalSeconds % 60;
 
-        animateValue(els.days, days, 3);
+        animateValue(els.days, days, 2);
         animateValue(els.hours, hours, 2);
         animateValue(els.minutes, minutes, 2);
         animateValue(els.seconds, seconds, 2);
