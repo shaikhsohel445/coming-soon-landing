@@ -1,0 +1,718 @@
+/* ==========================================================================
+   Universal "Coming Soon" Landing Page — style.css
+   Premium · Modern · Minimal · Fully Responsive
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design Tokens
+   -------------------------------------------------------------------------- */
+
+:root {
+    /* Core palette — Dark Mode (default) */
+    --bg: #0D0D0D;
+    --bg-secondary: #181818;
+    --card-bg: rgba(255, 255, 255, 0.04);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --accent: #D4AF37;            /* Luxury Gold — overridable from script.js */
+    --accent-soft: rgba(212, 175, 55, 0.16);
+    --accent-glow: rgba(212, 175, 55, 0.35);
+    --text: #FFFFFF;
+    --text-secondary: #B9B9B9;
+    --text-muted: #8A8A8A;
+    --glass-blur: 18px;
+
+    /* WhatsApp brand */
+    --whatsapp: #25D366;
+    --whatsapp-dark: #1DA851;
+
+    /* Typography */
+    --font-heading: 'Poppins', 'Manrope', system-ui, sans-serif;
+    --font-body: 'Manrope', 'Poppins', system-ui, sans-serif;
+
+    /* Layout */
+    --container-max: 1100px;
+    --gutter: 24px;
+    --radius-lg: 28px;
+    --radius-md: 18px;
+    --radius-sm: 12px;
+
+    /* Shadows */
+    --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.45);
+    --shadow-gold: 0 0 0 1px var(--accent-soft), 0 0 60px -10px var(--accent-glow);
+    --shadow-btn: 0 16px 40px rgba(0, 0, 0, 0.35);
+
+    color-scheme: dark;
+}
+
+/* Light Mode overrides */
+[data-theme="light"] {
+    --bg: #FFFFFF;
+    --bg-secondary: #F4F4F5;
+    --card-bg: rgba(0, 0, 0, 0.03);
+    --card-border: rgba(0, 0, 0, 0.08);
+    --accent-soft: rgba(212, 175, 55, 0.22);
+    --accent-glow: rgba(212, 175, 55, 0.30);
+    --text: #1A1A1A;
+    --text-secondary: #555555;
+    --text-muted: #8A8A8A;
+    --shadow-card: 0 20px 60px rgba(0, 0, 0, 0.08);
+    --shadow-btn: 0 16px 40px rgba(0, 0, 0, 0.12);
+
+    color-scheme: light;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset & Base
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Soft ambient radial glows behind content */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    z-index: -1;
+    border-radius: 50%;
+    filter: blur(90px);
+    pointer-events: none;
+}
+
+body::before {
+    top: -10%;
+    left: -10%;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+    opacity: 0.55;
+}
+
+body::after {
+    bottom: -15%;
+    right: -12%;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, var(--accent-soft), transparent 70%);
+    opacity: 0.4;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+::selection {
+    background: var(--accent);
+    color: #000;
+}
+
+/* --------------------------------------------------------------------------
+   3. Page Fade-in
+   -------------------------------------------------------------------------- */
+
+.page-wrapper {
+    width: 100%;
+    animation: pageFadeIn 0.8s ease forwards;
+}
+
+@keyframes pageFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* --------------------------------------------------------------------------
+   4. Theme Toggle (Top Right)
+   -------------------------------------------------------------------------- */
+
+.theme-toggle {
+    position: fixed;
+    top: 22px;
+    right: 22px;
+    z-index: 100;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    color: var(--text);
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08) rotate(8deg);
+    border-color: var(--accent);
+}
+
+.theme-toggle:active {
+    transform: scale(0.94);
+}
+
+.theme-toggle .icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.theme-toggle .icon-sun { opacity: 0; transform: scale(0.4) rotate(-90deg); }
+.theme-toggle .icon-moon { opacity: 1; transform: scale(1) rotate(0deg); }
+
+/* In light mode show sun */
+[data-theme="light"] .theme-toggle .icon-sun { opacity: 1; transform: scale(1) rotate(0deg); }
+[data-theme="light"] .theme-toggle .icon-moon { opacity: 0; transform: scale(0.4) rotate(90deg); }
+
+/* --------------------------------------------------------------------------
+   5. Layout
+   -------------------------------------------------------------------------- */
+
+.site-header {
+    display: flex;
+    justify-content: center;
+    padding: 48px var(--gutter) 8px;
+}
+
+.site-main {
+    display: flex;
+    justify-content: center;
+    padding: 16px var(--gutter) 40px;
+}
+
+.hero {
+    width: 100%;
+    max-width: var(--container-max);
+    text-align: center;
+}
+
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Logo (Section 1)
+   -------------------------------------------------------------------------- */
+
+.logo-link {
+    display: inline-flex;
+    animation: fadeInUp 1s ease both;
+    transition: transform 0.35s ease;
+}
+
+.logo-link:hover {
+    transform: translateY(-3px) scale(1.03);
+}
+
+.logo {
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+/* --------------------------------------------------------------------------
+   7. Launch Status Heading (Section 2)
+   -------------------------------------------------------------------------- */
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid var(--accent-soft);
+    padding: 8px 18px;
+    border-radius: 999px;
+    margin-top: 10px;
+    animation: fadeInUp 0.9s ease both;
+    animation-delay: 0.15s;
+}
+
+.eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+    animation: livePulse 2s ease-in-out infinite;
+}
+
+.launch-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3rem, 9vw, 6.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    animation: fadeInUp 0.9s ease both;
+    animation-delay: 0.3s;
+}
+
+.launch-title .title-line {
+    display: block;
+    overflow: hidden;
+}
+
+.launch-title .title-gold {
+    background: linear-gradient(120deg, var(--accent), #f3e2a8 50%, var(--accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite, fadeInUp 0.9s ease both;
+    filter: drop-shadow(0 6px 30px var(--accent-glow));
+}
+
+/* --------------------------------------------------------------------------
+   8. Countdown (Section 3)
+   -------------------------------------------------------------------------- */
+
+.countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 6px;
+    animation: fadeInUp 1s ease both;
+    animation-delay: 0.45s;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 84px;
+    padding: 18px 14px 14px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-md);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.countdown-item:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: var(--shadow-gold);
+}
+
+.countdown-value {
+    font-family: var(--font-heading);
+    font-size: clamp(1.9rem, 5vw, 3rem);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    line-height: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    min-width: 1.4em;
+}
+
+.countdown-value.flip {
+    animation: valueFlip 0.45s ease;
+}
+
+.countdown-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.countdown-sep {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--accent);
+    opacity: 0.55;
+    transform: translateY(-0.55em);
+    animation: softBlink 2s ease-in-out infinite;
+    user-select: none;
+}
+
+@keyframes valueFlip {
+    0%   { transform: translateY(-40%); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes softBlink {
+    0%, 100% { opacity: 0.25; }
+    50%      { opacity: 0.9; }
+}
+
+/* --------------------------------------------------------------------------
+   9. Live Message (shown at launch)
+   -------------------------------------------------------------------------- */
+
+.live-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-top: 6px;
+    animation: fadeInUp 0.9s ease both;
+}
+
+.live-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent-glow);
+    animation: livePulse 1.6s ease-out infinite;
+}
+
+.live-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 800;
+    background: linear-gradient(120deg, var(--accent), #f3e2a8 50%, var(--accent));
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 6s linear infinite;
+    filter: drop-shadow(0 6px 30px var(--accent-glow));
+}
+
+/* --------------------------------------------------------------------------
+   10. Hero Image (Section 4)
+   -------------------------------------------------------------------------- */
+
+.hero-visual {
+    width: 100%;
+    max-width: 820px;
+    margin-top: 14px;
+    display: flex;
+    justify-content: center;
+    animation: fadeInUp 1s ease both;
+    animation-delay: 0.6s;
+}
+
+.hero-image {
+    width: auto;
+    max-width: 100%;
+    max-height: 62vh;
+    height: auto;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--shadow-card);
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-visual:hover .hero-image {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-gold);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-14px); }
+}
+
+/* --------------------------------------------------------------------------
+   11. Description (Section 5)
+   -------------------------------------------------------------------------- */
+
+.description {
+    max-width: 560px;
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    animation: fadeInUp 1s ease both;
+    animation-delay: 0.75s;
+}
+
+/* --------------------------------------------------------------------------
+   12. Footer
+   -------------------------------------------------------------------------- */
+
+.site-footer {
+    text-align: center;
+    padding: 12px var(--gutter) 90px;
+    animation: fadeInUp 1s ease both;
+    animation-delay: 0.9s;
+}
+
+.footer-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.footer-credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.credit-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.credit-link:hover {
+    color: var(--accent);
+    opacity: 0.9;
+}
+
+.credit-logo {
+    height: 22px;
+    width: auto;
+    border-radius: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   13. WhatsApp Button (Section 6)
+   -------------------------------------------------------------------------- */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 26px;
+    right: 26px;
+    z-index: 90;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--whatsapp), var(--whatsapp-dark));
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 14px 34px rgba(37, 211, 102, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: whatsappPulse 2.4s ease-out infinite;
+}
+
+.whatsapp-btn svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-4px) scale(1.04);
+    box-shadow: 0 20px 44px rgba(37, 211, 102, 0.55);
+}
+
+.whatsapp-btn:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.whatsapp-label {
+    white-space: nowrap;
+}
+
+@keyframes whatsappPulse {
+    0%   { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45), 0 14px 34px rgba(37, 211, 102, 0.4); }
+    70%  { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0), 0 14px 34px rgba(37, 211, 102, 0.4); }
+    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 14px 34px rgba(37, 211, 102, 0.4); }
+}
+
+/* --------------------------------------------------------------------------
+   14. Confetti Celebration
+   -------------------------------------------------------------------------- */
+
+.confetti {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 200;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    top: -20px;
+    width: 10px;
+    height: 14px;
+    background: var(--accent);
+    opacity: 0;
+    animation: confettiFall linear infinite;
+}
+
+.confetti-piece:nth-child(odd) {
+    background: #f3e2a8;
+    border-radius: 50%;
+}
+
+.confetti-piece:nth-child(3n) {
+    background: #fff;
+    border-radius: 2px;
+    width: 6px;
+    height: 6px;
+}
+
+@keyframes confettiFall {
+    0%   { transform: translate3d(0, -5vh, 0) rotate(0deg); opacity: 1; }
+    100% { transform: translate3d(var(--drift, 0px), 110vh, 0) rotate(var(--spin, 720deg)); opacity: 0.4; }
+}
+
+/* --------------------------------------------------------------------------
+   15. Animations — shared
+   -------------------------------------------------------------------------- */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(26px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    to { background-position: 200% center; }
+}
+
+@keyframes livePulse {
+    0%   { box-shadow: 0 0 0 0 var(--accent-glow); }
+    70%  { box-shadow: 0 0 0 12px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* --------------------------------------------------------------------------
+   16. Accessibility
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   17. Responsive
+   -------------------------------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .countdown { gap: 10px; }
+    .countdown-item { min-width: 72px; padding: 14px 10px 12px; }
+    .countdown-sep { font-size: 1.6rem; }
+}
+
+@media (max-width: 600px) {
+    .site-header { padding-top: 64px; }
+    .theme-toggle { top: 16px; right: 16px; width: 42px; height: 42px; }
+
+    .countdown {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .countdown-item {
+        min-width: 0;
+        flex: 1 1 40%;
+        max-width: 46%;
+        padding: 14px 8px 12px;
+    }
+    .countdown-sep { display: none; }
+
+    /* WhatsApp button — bottom center on mobile */
+    .whatsapp-btn {
+        left: 50%;
+        right: auto;
+        bottom: 18px;
+        transform: translateX(-50%);
+        padding: 12px 16px;
+    }
+    .whatsapp-btn:hover {
+        transform: translateX(-50%) translateY(-4px) scale(1.04);
+    }
+    .whatsapp-btn:active {
+        transform: translateX(-50%) translateY(-1px) scale(0.98);
+    }
+
+    .site-footer { padding-bottom: 110px; }
+}
+
+@media (max-width: 380px) {
+    .countdown-item { padding: 12px 6px 10px; }
+    .countdown-value { font-size: 1.5rem; }
+    .logo { max-height: 76px; }
+}
