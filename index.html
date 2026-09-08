@@ -71,7 +71,7 @@
         "description": "Elite Aroma's Café & Bistro — A contemporary dining experience built around exceptional food, warm hospitality and timeless quality.",
         "founder": {
             "@type": "Person",
-            "name": "Devdas J. Shetty"
+            "name": "Mr. Devdas J. Shetty"
         },
         "areaServed": ["Kalyan West", "Khadakpada", "Thane", "Maharashtra"]
     }
@@ -106,7 +106,7 @@
             --header-h: 80px;
             --radius: 16px;
             --radius-sm: 10px;
-            --shadow: 0 20px 60px rgba(0,0,0,0.5);
+            --shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
             --shadow-gold: 0 0 0 1px var(--accent-soft), 0 0 40px -8px var(--accent-glow);
             color-scheme: dark;
         }
@@ -114,7 +114,13 @@
         /* ==========================================================================
            2. RESET & BASE
            ========================================================================== */
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
         html {
             scroll-behavior: smooth;
@@ -131,13 +137,38 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        img { max-width: 100%; display: block; }
-        a { color: inherit; text-decoration: none; }
-        button { font-family: inherit; cursor: pointer; background: none; border: none; }
-        ul { list-style: none; }
-        ::selection { background: var(--accent); color: #000; }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-        .container { width: 100%; max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter); }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 var(--gutter);
+        }
 
         /* ==========================================================================
            3. OPENING ANIMATION
@@ -189,15 +220,22 @@
         }
 
         @keyframes openingLogoIn {
-            to { opacity: 1; transform: scale(1); }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
 
         @keyframes openingTextIn {
-            to { opacity: 1; }
+            to {
+                opacity: 1;
+            }
         }
 
         @keyframes openingLineIn {
-            to { width: 200px; }
+            to {
+                width: 200px;
+            }
         }
 
         /* ==========================================================================
@@ -288,6 +326,15 @@
             margin-bottom: 20px;
         }
 
+        .welcome-badges {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
+        }
+
         .welcome-badge {
             display: inline-flex;
             align-items: center;
@@ -300,7 +347,18 @@
             font-weight: 600;
             color: var(--accent);
             letter-spacing: 0.05em;
-            margin-bottom: 28px;
+            margin-bottom: 0;
+        }
+
+        .welcome-badge-gold {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.08));
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            color: #e5c158;
+        }
+
+        .welcome-badge-gold::before {
+            background: #e5c158;
+            box-shadow: 0 0 10px rgba(229, 193, 88, 0.6);
         }
 
         .welcome-badge::before {
@@ -369,7 +427,10 @@
             box-shadow: 0 12px 30px rgba(37, 211, 102, 0.35);
         }
 
-        .btn-whatsapp svg { width: 20px; height: 20px; }
+        .btn-whatsapp svg {
+            width: 20px;
+            height: 20px;
+        }
 
         /* ==========================================================================
            5. HEADER
@@ -466,8 +527,14 @@
             transition: transform 0.3s;
         }
 
-        .header-wa:hover { transform: scale(1.04); }
-        .header-wa svg { width: 16px; height: 16px; }
+        .header-wa:hover {
+            transform: scale(1.04);
+        }
+
+        .header-wa svg {
+            width: 16px;
+            height: 16px;
+        }
 
         /* Hamburger */
         .hamburger {
@@ -489,9 +556,17 @@
             transition: transform 0.3s, opacity 0.3s;
         }
 
-        .hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-        .hamburger.active span:nth-child(2) { opacity: 0; }
-        .hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+        .hamburger.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
 
         /* Mobile menu */
         .mobile-menu {
@@ -524,7 +599,9 @@
             transition: color 0.3s;
         }
 
-        .mobile-menu a:hover { color: var(--accent); }
+        .mobile-menu a:hover {
+            color: var(--accent);
+        }
 
         /* ==========================================================================
            6. HERO SECTION
@@ -555,13 +632,11 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(
-                180deg,
-                rgba(10, 10, 10, 0.6) 0%,
-                rgba(10, 10, 10, 0.4) 40%,
-                rgba(10, 10, 10, 0.8) 80%,
-                rgba(10, 10, 10, 1) 100%
-            );
+            background: linear-gradient(180deg,
+                    rgba(10, 10, 10, 0.6) 0%,
+                    rgba(10, 10, 10, 0.4) 40%,
+                    rgba(10, 10, 10, 0.8) 80%,
+                    rgba(10, 10, 10, 1) 100%);
         }
 
         .hero-content {
@@ -651,8 +726,13 @@
         }
 
         @keyframes heroZoom {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
         }
 
         /* Gold decorative line */
@@ -722,6 +802,7 @@
             height: auto;
             aspect-ratio: 1 / 1;
             object-fit: cover;
+            object-position: center top;
             border-radius: var(--radius);
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
@@ -859,7 +940,10 @@
             transition: border-color 0.3s, box-shadow 0.3s;
         }
 
-        .menu-search::placeholder { color: var(--text-muted); }
+        .menu-search::placeholder {
+            color: var(--text-muted);
+        }
+
         .menu-search:focus {
             border-color: var(--accent);
             box-shadow: 0 0 0 3px var(--accent-soft);
@@ -888,7 +972,9 @@
             flex-wrap: wrap;
         }
 
-        .menu-tabs::-webkit-scrollbar { display: none; }
+        .menu-tabs::-webkit-scrollbar {
+            display: none;
+        }
 
         .menu-tab {
             padding: 10px 20px;
@@ -902,7 +988,10 @@
             transition: all 0.3s;
         }
 
-        .menu-tab:hover { border-color: var(--accent); color: var(--accent); }
+        .menu-tab:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
 
         .menu-tab.active {
             background: var(--accent);
@@ -1032,7 +1121,9 @@
             margin-bottom: 28px;
         }
 
-        .contact-brand span { color: var(--accent); }
+        .contact-brand span {
+            color: var(--accent);
+        }
 
         .contact-detail {
             display: flex;
@@ -1120,8 +1211,13 @@
             transition: all 0.3s;
         }
 
-        .btn-small.btn-primary { padding: 10px 20px; }
-        .btn-small.btn-outline { padding: 10px 20px; }
+        .btn-small.btn-primary {
+            padding: 10px 20px;
+        }
+
+        .btn-small.btn-outline {
+            padding: 10px 20px;
+        }
 
         /* ==========================================================================
            10. FOOTER
@@ -1146,7 +1242,9 @@
             margin-bottom: 12px;
         }
 
-        .footer-brand-name span { color: var(--accent); }
+        .footer-brand-name span {
+            color: var(--accent);
+        }
 
         .footer-brand-desc {
             color: var(--text-muted);
@@ -1173,7 +1271,9 @@
             transition: color 0.3s;
         }
 
-        .footer-links a:hover { color: var(--accent); }
+        .footer-links a:hover {
+            color: var(--accent);
+        }
 
         .footer-contact-item {
             display: flex;
@@ -1218,7 +1318,9 @@
             transition: color 0.3s;
         }
 
-        .footer-credit a:hover { color: var(--accent); }
+        .footer-credit a:hover {
+            color: var(--accent);
+        }
 
         /* ==========================================================================
            11. FLOATING WHATSAPP
@@ -1252,9 +1354,17 @@
         }
 
         @keyframes waPulse {
-            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45), 0 8px 24px rgba(37, 211, 102, 0.4); }
-            70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.4); }
-            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.4); }
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.45), 0 8px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            70% {
+                box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.4);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 8px 24px rgba(37, 211, 102, 0.4);
+            }
         }
 
         /* ==========================================================================
@@ -1275,12 +1385,21 @@
            13. ANIMATIONS
            ========================================================================== */
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         @keyframes shimmer {
-            to { background-position: 200% center; }
+            to {
+                background-position: 200% center;
+            }
         }
 
         /* ==========================================================================
@@ -1299,65 +1418,165 @@
             padding: 0;
             margin: -1px;
             overflow: hidden;
-            clip: rect(0,0,0,0);
+            clip: rect(0, 0, 0, 0);
             white-space: nowrap;
             border: 0;
         }
 
         @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
+
+            *,
+            *::before,
+            *::after {
                 animation-duration: 0.001ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.001ms !important;
                 scroll-behavior: auto !important;
             }
-            .reveal { opacity: 1; transform: none; }
-            .hero-bg img { animation: none; }
+
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+
+            .hero-bg img {
+                animation: none;
+            }
         }
 
         /* ==========================================================================
            15. RESPONSIVE
            ========================================================================== */
         @media (max-width: 1024px) {
-            .about-grid { grid-template-columns: 1fr; gap: 40px; }
-            .about-image { max-width: 480px; width: 100%; margin: 0 auto; }
-            .contact-grid { grid-template-columns: 1fr; }
-            .footer-grid { grid-template-columns: 1fr 1fr; }
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-image {
+                max-width: 480px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .header-nav, .header-wa { display: none; }
-            .hamburger { display: flex; }
-            .mobile-menu { display: flex; }
 
-            .hero-title { font-size: clamp(2.5rem, 10vw, 4rem); }
-            .section { padding: 70px 0; }
-            .menu-grid { grid-template-columns: 1fr; }
-            .menu-tabs { justify-content: flex-start; flex-wrap: nowrap; }
+            .header-nav,
+            .header-wa {
+                display: none;
+            }
 
-            .about-stats { grid-template-columns: 1fr 1fr; }
+            .hamburger {
+                display: flex;
+            }
 
-            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
-            .footer-bottom { flex-direction: column; text-align: center; }
+            .mobile-menu {
+                display: flex;
+            }
 
-            .welcome-popup { padding: 36px 24px; }
+            .hero-title {
+                font-size: clamp(2.5rem, 10vw, 4rem);
+            }
 
-            .contact-info-card { padding: 28px; }
+            .section {
+                padding: 70px 0;
+            }
 
-            .contact-map iframe { height: 260px; }
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-tabs {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .welcome-popup {
+                padding: 36px 24px;
+            }
+
+            .contact-info-card {
+                padding: 28px;
+            }
+
+            .contact-map iframe {
+                height: 260px;
+            }
         }
 
         @media (max-width: 480px) {
-            .about-image { max-width: 100%; }
-            .about-image::before { top: -6px; left: -6px; right: 6px; bottom: 6px; }
-            .hero-buttons { flex-direction: column; width: 100%; }
-            .hero-buttons a, .hero-buttons button { width: 100%; justify-content: center; }
-            .btn-primary, .btn-outline, .btn-whatsapp { width: 100%; justify-content: center; }
-            .contact-buttons { flex-direction: column; }
-            .contact-buttons a { width: 100%; }
-            .contact-map-buttons { flex-direction: column; }
-            .contact-map-buttons a { width: 100%; }
-            .menu-tab { padding: 8px 14px; font-size: 0.8rem; }
+            .about-image {
+                max-width: 100%;
+            }
+
+            .about-image::before {
+                top: -6px;
+                left: -6px;
+                right: 6px;
+                bottom: 6px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .hero-buttons a,
+            .hero-buttons button {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .btn-primary,
+            .btn-outline,
+            .btn-whatsapp {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .contact-buttons a {
+                width: 100%;
+            }
+
+            .contact-map-buttons {
+                flex-direction: column;
+            }
+
+            .contact-map-buttons a {
+                width: 100%;
+            }
+
+            .menu-tab {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
@@ -1381,10 +1600,13 @@
             <button class="welcome-close" id="welcomeClose" aria-label="Close welcome popup">&times;</button>
             <img src="images/logo.jpeg" alt="Elite Aroma's Café & Bistro logo" class="welcome-logo">
             <h2 class="welcome-title">Welcome to <span>Elite Aroma's</span> Café &amp; Bistro</h2>
-            <p class="welcome-desc">A contemporary dining experience built around exceptional food, warm hospitality and timeless quality.</p>
-            <div class="welcome-badge">25+ Years of Hospitality Excellence</div>
-            <br>
-            <a href="#menu" class="btn-primary" id="welcomeExploreBtn">Explore Menu</a>
+            <p class="welcome-desc">A contemporary dining experience built around exceptional food, warm hospitality and
+                timeless quality.</p>
+            <div class="welcome-badges">
+                <div class="welcome-badge">25+ Years of Hospitality Excellence</div>
+                <div class="welcome-badge welcome-badge-gold">Menu Coming Soon</div>
+            </div>
+            <a href="#about" class="btn-primary" id="welcomeExploreBtn">Explore the Website</a>
         </div>
     </div>
 
@@ -1404,7 +1626,10 @@
             </nav>
             <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                 class="header-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
-                <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z"/></svg>
+                <svg viewBox="0 0 32 32" fill="currentColor">
+                    <path
+                        d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z" />
+                </svg>
                 WhatsApp
             </a>
             <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false">
@@ -1428,7 +1653,8 @@
          ===================================================================== -->
     <section class="hero" id="home">
         <div class="hero-bg">
-            <img src="images/hero-image.jpeg" alt="Elite Aroma's Café & Bistro interior" width="1400" height="900" loading="eager">
+            <img src="images/hero-image.jpeg" alt="Elite Aroma's Café & Bistro interior" width="1400" height="900"
+                loading="eager">
         </div>
         <div class="hero-content">
             <p class="hero-eyebrow reveal">Welcome to</p>
@@ -1441,7 +1667,10 @@
                 <a href="#menu" class="btn-primary">Explore Menu</a>
                 <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                     class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
-                    <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z"/></svg>
+                    <svg viewBox="0 0 32 32" fill="currentColor">
+                        <path
+                            d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z" />
+                    </svg>
                     WhatsApp Us
                 </a>
                 <a href="#contact" class="btn-outline">Visit Us</a>
@@ -1461,19 +1690,31 @@
             </div>
             <div class="about-grid">
                 <div class="about-image reveal">
-                    <img src="images/founder.jpeg" alt="Devdas J. Shetty — Founder & Director of Elite Aroma's Café & Bistro" width="1254" height="1254" loading="lazy">
+                    <img src="images/founder.jpeg"
+                        alt="Mr. Devdas J. Shetty — Founder & Director of Elite Aroma's Café & Bistro" width="1024"
+                        height="1024" loading="lazy">
                 </div>
                 <div class="about-content reveal">
-                    <h3 class="about-founder-name">Devdas J. Shetty</h3>
+                    <h3 class="about-founder-name">Mr. Devdas J. Shetty</h3>
                     <p class="about-founder-title">Founder &bull; Director &bull; Hospitality Entrepreneur</p>
                     <p class="about-text">
-                        With over 25 years of dedication to the hospitality industry, Devdas J. Shetty has built a reputation rooted in quality, trust and an unwavering commitment to excellence. Starting his journey from humble beginnings, he rose through the ranks of the food and catering industry, driven by a passion for delivering exceptional dining experiences.
+                        With over 25 years of dedication to the hospitality industry, Mr. Devdas J. Shetty has built a
+                        reputation rooted in quality, trust and an unwavering commitment to excellence. Starting his
+                        journey from humble beginnings, he rose through the ranks of the food and catering industry,
+                        driven by a passion for delivering exceptional dining experiences.
                     </p>
                     <p class="about-text">
-                        As a seasoned entrepreneur and business leader, Devdas has successfully established and managed multiple ventures across food &amp; catering, hospitality management and business development. His vision for Elite Aroma's Café &amp; Bistro was born from a deep desire to create a space where every guest feels valued, every meal tells a story and every visit becomes a cherished memory.
+                        As a seasoned entrepreneur and business leader, Mr. Devdas J. Shetty has successfully
+                        established and managed multiple ventures across food &amp; catering, hospitality management and
+                        business development. His vision for Elite Aroma's Café &amp; Bistro was born from a deep desire
+                        to create a space where every guest feels valued, every meal tells a story and every visit
+                        becomes a cherished memory.
                     </p>
                     <p class="about-text">
-                        Under his leadership, Elite Aroma's represents the culmination of decades of expertise, combining traditional Indian warmth with contemporary culinary excellence. His philosophy is simple yet powerful: quality ingredients, skilled craftsmanship and genuine hospitality create unforgettable experiences.
+                        Under his leadership, Elite Aroma's represents the culmination of decades of expertise,
+                        combining traditional Indian warmth with contemporary culinary excellence. His philosophy is
+                        simple yet powerful: quality ingredients, skilled craftsmanship and genuine hospitality create
+                        unforgettable experiences.
                     </p>
                     <div class="about-stats">
                         <div class="about-stat">
@@ -1481,7 +1722,7 @@
                             <div class="about-stat-label">Years of Excellence</div>
                         </div>
                         <div class="about-stat">
-                            <div class="about-stat-value">1000+</div>
+                            <div class="about-stat-value">10000+</div>
                             <div class="about-stat-label">Happy Customers</div>
                         </div>
                     </div>
@@ -1505,12 +1746,13 @@
     <section class="section" id="menu" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-header reveal">
-                <p class="section-label">Our Menu</p>
+                <h2 class="section-title">Our <span>Menu</span></h2>
+                <p class="section-label">Coming Soon</p>
                 <h2 class="section-title">Culinary <span>Excellence</span></h2>
-                <div class="section-divider"></div>
+                <!-- <div class="section-divider"></div> -->
             </div>
 
-            <div class="menu-search-wrap reveal">
+            <!-- <div class="menu-search-wrap reveal">
                 <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 <input type="search" class="menu-search" id="menuSearch" placeholder="Search our menu..." aria-label="Search menu items">
             </div>
@@ -1526,7 +1768,7 @@
                 <button class="menu-tab" data-category="Rice & Bowls" role="tab" aria-selected="false">Rice &amp; Bowls</button>
                 <button class="menu-tab" data-category="Noodles" role="tab" aria-selected="false">Noodles</button>
                 <button class="menu-tab" data-category="Desserts" role="tab" aria-selected="false">Desserts</button>
-            </div>
+            </div> -->
 
             <div class="menu-grid" id="menuGrid" role="tabpanel">
                 <!-- Menu cards rendered by JavaScript -->
@@ -1549,23 +1791,37 @@
                     <h3 class="contact-brand"><span>Elite Aroma's</span> Café &amp; Bistro</h3>
 
                     <div class="contact-detail">
-                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
                         <div>
                             <p class="contact-detail-label">Address</p>
-                            <p class="contact-detail-value">Shop No. G6 (Ground Floor),<br>Tulip Shopping Center, Building No. 2,<br>Godrej Hill Road, Khadakpada,<br>Kalyan West - 421301.</p>
+                            <p class="contact-detail-value">Shop No. G6 (Ground Floor),<br>Tulip Shopping Center,
+                                Building No. 2,<br>Godrej Hill Road, Khadakpada,<br>Kalyan West - 421301.</p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         <div>
                             <p class="contact-detail-label">Phone</p>
-                            <p class="contact-detail-value"><a href="tel:+919819209279" style="color: var(--accent);">9819209279</a></p>
+                            <p class="contact-detail-value"><a href="tel:+919819209279"
+                                    style="color: var(--accent);">9819209279</a></p>
                         </div>
                     </div>
 
                     <div class="contact-detail">
-                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
                         <div>
                             <p class="contact-detail-label">GST</p>
                             <span class="contact-gst">GST-27AYYPS1388K1ZA</span>
@@ -1574,12 +1830,19 @@
 
                     <div class="contact-buttons">
                         <a href="tel:+919819209279" class="btn-primary btn-small">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg>
                             Call Now
                         </a>
                         <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                             class="btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer">
-                            <svg viewBox="0 0 32 32" fill="currentColor"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z"/></svg>
+                            <svg viewBox="0 0 32 32" fill="currentColor">
+                                <path
+                                    d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z" />
+                            </svg>
                             WhatsApp
                         </a>
                         <a href="https://www.google.com/maps/search/?api=1&query=Elite+Aroma+Cafe+Bistro+Khadakpada+Kalyan+West"
@@ -1598,7 +1861,8 @@
                         <a href="https://www.google.com/maps/search/?api=1&query=Elite+Aroma+Cafe+Bistro+Khadakpada+Kalyan+West"
                             class="btn-primary btn-small" target="_blank" rel="noopener noreferrer">Get Directions</a>
                         <a href="https://www.google.com/maps/place/Khadakpada,+Kalyan+West,+Maharashtra+421301"
-                            class="btn-outline btn-small" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                            class="btn-outline btn-small" target="_blank" rel="noopener noreferrer">Open in Google
+                            Maps</a>
                     </div>
                 </div>
             </div>
@@ -1613,7 +1877,8 @@
             <div class="footer-grid">
                 <div>
                     <p class="footer-brand-name"><span>Elite Aroma's</span> Café &amp; Bistro</p>
-                    <p class="footer-brand-desc">A contemporary dining experience built around exceptional food, warm hospitality and timeless quality. 25+ Years of Hospitality Excellence.</p>
+                    <p class="footer-brand-desc">A contemporary dining experience built around exceptional food, warm
+                        hospitality and timeless quality. 25+ Years of Hospitality Excellence.</p>
                 </div>
                 <div>
                     <h4 class="footer-heading">Quick Links</h4>
@@ -1627,29 +1892,43 @@
                 <div>
                     <h4 class="footer-heading">Connect</h4>
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu." target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-                        <li><a href="https://www.google.com/maps/search/?api=1&query=Elite+Aroma+Cafe+Bistro+Khadakpada+Kalyan+West" target="_blank" rel="noopener noreferrer">Google Maps</a></li>
+                        <li><a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+                                target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+                        <li><a href="https://www.google.com/maps/search/?api=1&query=Elite+Aroma+Cafe+Bistro+Khadakpada+Kalyan+West"
+                                target="_blank" rel="noopener noreferrer">Google Maps</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="footer-heading">Contact Info</h4>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                        <span>Shop No. G6, Tulip Shopping Center, Godrej Hill Road, Khadakpada, Kalyan West - 421301</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <span>Shop No. G6, Tulip Shopping Center, Godrej Hill Road, Khadakpada, Kalyan West -
+                            421301</span>
                     </div>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
                         <span><a href="tel:+919819209279" style="color: var(--accent);">9819209279</a></span>
                     </div>
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="4" width="20" height="16" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
                         <span>GST-27AYYPS1388K1ZA</span>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p class="footer-copy">&copy; 2026 <strong>Elite Aroma's Café &amp; Bistro</strong>. All Rights Reserved.</p>
-                <p class="footer-credit">Designed &amp; Developed by <a href="https://startechno.co.in/home/" target="_blank" rel="noopener noreferrer">Star Techno</a></p>
+                <p class="footer-copy">&copy; 2026 <strong>Elite Aroma's Café &amp; Bistro</strong>. All Rights
+                    Reserved.</p>
+                <p class="footer-credit">Designed &amp; Developed by <a href="https://startechno.co.in/home/"
+                        target="_blank" rel="noopener noreferrer">Star Techno</a></p>
             </div>
         </div>
     </footer>
@@ -1659,359 +1938,362 @@
          ===================================================================== -->
     <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
         class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-        <svg viewBox="0 0 32 32"><path d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z"/></svg>
+        <svg viewBox="0 0 32 32">
+            <path
+                d="M16.04 3.5c-6.9 0-12.5 5.6-12.5 12.5 0 2.2.6 4.35 1.7 6.25L3.5 28.5l6.45-1.7a12.4 12.4 0 0 0 6.1 1.6h.01c6.9 0 12.5-5.6 12.5-12.5S22.94 3.5 16.04 3.5zm0 22.9c-2 0-3.9-.55-5.6-1.6l-.4-.24-3.8 1 1.02-3.7-.26-.4a10.4 10.4 0 0 1-1.6-5.6c0-5.75 4.7-10.45 10.45-10.45 5.6 0 10.2 4.6 10.2 10.25 0 5.65-4.6 10.2-10.2 10.2zm5.75-7.65c-.3-.15-1.8-.9-2.05-1-.3-.1-.5-.15-.7.15-.2.3-.8 1-1 1.2-.2.2-.35.2-.65.05-.3-.15-1.3-.45-2.4-1.45-.9-.85-1.5-1.9-1.65-2.2-.15-.3-.05-.45.1-.6.15-.15.3-.35.45-.5.15-.2.2-.3.3-.5.1-.2.05-.4 0-.55-.05-.15-.7-1.6-.95-2.2-.25-.6-.5-.5-.7-.5h-.6c-.2 0-.55.1-.8.35-.25.3-1 1-1 2.4 0 1.45 1.05 2.8 1.2 3 .15.2 2.05 3.2 5 4.5.7.3 1.25.5 1.7.65.7.25 1.35.2 1.85.15.6-.05 1.8-.75 2.05-1.45.25-.7.25-1.3.2-1.45-.1-.1-.25-.2-.55-.35z" />
+        </svg>
     </a>
 
     <!-- =====================================================================
          JAVASCRIPT
          ===================================================================== -->
     <script>
-    'use strict';
+        'use strict';
 
-    /* =====================================================================
-       MENU DATA
-       ===================================================================== */
-    const menuItems = [
-        // Soups
-        { category: "Soups", name: "Veg Beijing Soup", description: "Clear broth with mirepoix and noodles", type: "veg" },
-        { category: "Soups", name: "Chicken Manchow Soup", description: "Spicy and sour soup garnished with crispy noodles", type: "nonveg" },
-        { category: "Soups", name: "Hot & Sour Soup", description: "Tangy and spicy soup with mixed vegetables and tofu", type: "veg" },
-        { category: "Soups", name: "Tomato Basil Soup", description: "Classic creamy tomato soup with fresh basil leaves", type: "veg" },
-        { category: "Soups", name: "Lemon Coriander Soup", description: "Light and refreshing broth with coriander and lemon zest", type: "veg" },
-        { category: "Soups", name: "Sweet Corn Soup", description: "Creamy sweet corn soup with mixed vegetables", type: "veg" },
-        { category: "Soups", name: "Mutton Pepper Soup", description: "Peppercorn-infused mutton broth with aromatic spices", type: "nonveg" },
+        /* =====================================================================
+           MENU DATA
+           ===================================================================== */
+        const menuItems = [
+            // Soups
+            { category: "Soups", name: "Veg Beijing Soup", description: "Clear broth with mirepoix and noodles", type: "veg" },
+            { category: "Soups", name: "Chicken Manchow Soup", description: "Spicy and sour soup garnished with crispy noodles", type: "nonveg" },
+            { category: "Soups", name: "Hot & Sour Soup", description: "Tangy and spicy soup with mixed vegetables and tofu", type: "veg" },
+            { category: "Soups", name: "Tomato Basil Soup", description: "Classic creamy tomato soup with fresh basil leaves", type: "veg" },
+            { category: "Soups", name: "Lemon Coriander Soup", description: "Light and refreshing broth with coriander and lemon zest", type: "veg" },
+            { category: "Soups", name: "Sweet Corn Soup", description: "Creamy sweet corn soup with mixed vegetables", type: "veg" },
+            { category: "Soups", name: "Mutton Pepper Soup", description: "Peppercorn-infused mutton broth with aromatic spices", type: "nonveg" },
 
-        // Salads
-        { category: "Salads", name: "Greek Salad", description: "Fresh vegetables with feta cheese, olives and olive oil dressing", type: "veg" },
-        { category: "Salads", name: "Caesar Salad", description: "Crisp romaine lettuce with parmesan, croutons and Caesar dressing", type: "veg" },
-        { category: "Salads", name: "Thai Salad", description: "Asian-style salad with peanuts, lime dressing and fresh herbs", type: "veg" },
-        { category: "Salads", name: "Mediterranean Salad", description: "Mixed greens with olives, sun-dried tomatoes and feta", type: "veg" },
-        { category: "Salads", name: "Grilled Chicken Salad", description: "Tender grilled chicken breast over seasonal greens with vinaigrette", type: "nonveg" },
-        { category: "Salads", name: "Prawn Salad", description: "Succulent prawns with citrus dressing and microgreens", type: "nonveg" },
+            // Salads
+            { category: "Salads", name: "Greek Salad", description: "Fresh vegetables with feta cheese, olives and olive oil dressing", type: "veg" },
+            { category: "Salads", name: "Caesar Salad", description: "Crisp romaine lettuce with parmesan, croutons and Caesar dressing", type: "veg" },
+            { category: "Salads", name: "Thai Salad", description: "Asian-style salad with peanuts, lime dressing and fresh herbs", type: "veg" },
+            { category: "Salads", name: "Mediterranean Salad", description: "Mixed greens with olives, sun-dried tomatoes and feta", type: "veg" },
+            { category: "Salads", name: "Grilled Chicken Salad", description: "Tender grilled chicken breast over seasonal greens with vinaigrette", type: "nonveg" },
+            { category: "Salads", name: "Prawn Salad", description: "Succulent prawns with citrus dressing and microgreens", type: "nonveg" },
 
-        // Tandoor
-        { category: "Tandoor", name: "Tandoori Chicken", description: "Whole chicken marinated in yogurt and spices, cooked in clay oven", type: "nonveg" },
-        { category: "Tandoor", name: "Paneer Tikka", description: "Cottage cheese marinated in spiced yogurt and chargrilled", type: "veg" },
-        { category: "Tandoor", name: "Fish Tikka", description: "Fresh fish cubes marinated in tandoori spices and grilled", type: "nonveg" },
-        { category: "Tandoor", name: "Seekh Kebab", description: "Minced lamb kebabs with herbs and spices on skewers", type: "nonveg" },
-        { category: "Tandoor", name: "Malai Tikka", description: "Cream and cheese marinated chicken with mild aromatic spices", type: "nonveg" },
-        { category: "Tandoor", name: "Tandoori Prawns", description: "Jumbo prawns in tandoori marinade, chargrilled to perfection", type: "nonveg" },
-        { category: "Tandoor", name: "Aloo Tikki", description: "Crispy spiced potato patties with mint chutney", type: "veg" },
+            // Tandoor
+            { category: "Tandoor", name: "Tandoori Chicken", description: "Whole chicken marinated in yogurt and spices, cooked in clay oven", type: "nonveg" },
+            { category: "Tandoor", name: "Paneer Tikka", description: "Cottage cheese marinated in spiced yogurt and chargrilled", type: "veg" },
+            { category: "Tandoor", name: "Fish Tikka", description: "Fresh fish cubes marinated in tandoori spices and grilled", type: "nonveg" },
+            { category: "Tandoor", name: "Seekh Kebab", description: "Minced lamb kebabs with herbs and spices on skewers", type: "nonveg" },
+            { category: "Tandoor", name: "Malai Tikka", description: "Cream and cheese marinated chicken with mild aromatic spices", type: "nonveg" },
+            { category: "Tandoor", name: "Tandoori Prawns", description: "Jumbo prawns in tandoori marinade, chargrilled to perfection", type: "nonveg" },
+            { category: "Tandoor", name: "Aloo Tikki", description: "Crispy spiced potato patties with mint chutney", type: "veg" },
 
-        // Indian Mains
-        { category: "Indian Mains", name: "Butter Chicken", description: "Tender chicken in rich, creamy tomato-based gravy with butter", type: "nonveg" },
-        { category: "Indian Mains", name: "Paneer Butter Masala", description: "Cottage cheese cubes in velvety tomato and butter gravy", type: "veg" },
-        { category: "Indian Mains", name: "Dal Makhani", description: "Slow-cooked black lentils simmered overnight in butter and cream", type: "veg" },
-        { category: "Indian Mains", name: "Chicken Curry", description: "Traditional homestyle chicken curry with aromatic spices", type: "nonveg" },
-        { category: "Indian Mains", name: "Mutton Rogan Josh", description: "Aromatic Kashmiri-style lamb curry with whole spices", type: "nonveg" },
-        { category: "Indian Mains", name: "Fish Curry", description: "Coastal-style tangy fish curry with kokum and coconut", type: "nonveg" },
-        { category: "Indian Mains", name: "Kadhai Paneer", description: "Cottage cheese in bell pepper and onion gravy with kadhai spices", type: "veg" },
-        { category: "Indian Mains", name: "Chole Masala", description: "Spiced chickpea curry served with traditional Punjabi masala", type: "veg" },
-        { category: "Indian Mains", name: "Palak Paneer", description: "Cottage cheese cubes in creamy spinach gravy", type: "veg" },
+            // Indian Mains
+            { category: "Indian Mains", name: "Butter Chicken", description: "Tender chicken in rich, creamy tomato-based gravy with butter", type: "nonveg" },
+            { category: "Indian Mains", name: "Paneer Butter Masala", description: "Cottage cheese cubes in velvety tomato and butter gravy", type: "veg" },
+            { category: "Indian Mains", name: "Dal Makhani", description: "Slow-cooked black lentils simmered overnight in butter and cream", type: "veg" },
+            { category: "Indian Mains", name: "Chicken Curry", description: "Traditional homestyle chicken curry with aromatic spices", type: "nonveg" },
+            { category: "Indian Mains", name: "Mutton Rogan Josh", description: "Aromatic Kashmiri-style lamb curry with whole spices", type: "nonveg" },
+            { category: "Indian Mains", name: "Fish Curry", description: "Coastal-style tangy fish curry with kokum and coconut", type: "nonveg" },
+            { category: "Indian Mains", name: "Kadhai Paneer", description: "Cottage cheese in bell pepper and onion gravy with kadhai spices", type: "veg" },
+            { category: "Indian Mains", name: "Chole Masala", description: "Spiced chickpea curry served with traditional Punjabi masala", type: "veg" },
+            { category: "Indian Mains", name: "Palak Paneer", description: "Cottage cheese cubes in creamy spinach gravy", type: "veg" },
 
-        // Biryani & Rice
-        { category: "Biryani & Rice", name: "Chicken Biryani", description: "Aromatic basmati rice layered with spiced chicken, cooked on dum", type: "nonveg" },
-        { category: "Biryani & Rice", name: "Mutton Biryani", description: "Slow-cooked mutton biryani with saffron and whole spices", type: "nonveg" },
-        { category: "Biryani & Rice", name: "Veg Biryani", description: "Fragrant basmati rice with mixed vegetables and mint", type: "veg" },
-        { category: "Biryani & Rice", name: "Hyderabadi Biryani", description: "Authentic dum-style biryani with tender meat and caramelized onions", type: "nonveg" },
-        { category: "Biryani & Rice", name: "Egg Biryani", description: "Basmati rice with boiled eggs, saffron and aromatic spices", type: "nonveg" },
+            // Biryani & Rice
+            { category: "Biryani & Rice", name: "Chicken Biryani", description: "Aromatic basmati rice layered with spiced chicken, cooked on dum", type: "nonveg" },
+            { category: "Biryani & Rice", name: "Mutton Biryani", description: "Slow-cooked mutton biryani with saffron and whole spices", type: "nonveg" },
+            { category: "Biryani & Rice", name: "Veg Biryani", description: "Fragrant basmati rice with mixed vegetables and mint", type: "veg" },
+            { category: "Biryani & Rice", name: "Hyderabadi Biryani", description: "Authentic dum-style biryani with tender meat and caramelized onions", type: "nonveg" },
+            { category: "Biryani & Rice", name: "Egg Biryani", description: "Basmati rice with boiled eggs, saffron and aromatic spices", type: "nonveg" },
 
-        // Asian
-        { category: "Asian", name: "Thai Green Curry", description: "Coconut-based green curry with vegetables and Thai basil", type: "veg" },
-        { category: "Asian", name: "Thai Red Curry", description: "Spicy red curry with coconut milk, vegetables and Thai herbs", type: "veg" },
-        { category: "Asian", name: "Chinese Stir Fry", description: "Mixed vegetables wok-tossed in soy and garlic sauce", type: "veg" },
-        { category: "Asian", name: "Nasi Goreng", description: "Indonesian-style fried rice with sweet soy, egg and prawn crackers", type: "nonveg" },
-        { category: "Asian", name: "Teriyaki Chicken", description: "Glazed chicken in Japanese teriyaki sauce with sesame seeds", type: "nonveg" },
-        { category: "Asian", name: "Schezwan Chicken", description: "Wok-tossed chicken in fiery Schezwan sauce with bell peppers", type: "nonveg" },
-        { category: "Asian", name: "Pad Thai", description: "Stir-fried rice noodles with peanuts, bean sprouts and lime", type: "veg" },
+            // Asian
+            { category: "Asian", name: "Thai Green Curry", description: "Coconut-based green curry with vegetables and Thai basil", type: "veg" },
+            { category: "Asian", name: "Thai Red Curry", description: "Spicy red curry with coconut milk, vegetables and Thai herbs", type: "veg" },
+            { category: "Asian", name: "Chinese Stir Fry", description: "Mixed vegetables wok-tossed in soy and garlic sauce", type: "veg" },
+            { category: "Asian", name: "Nasi Goreng", description: "Indonesian-style fried rice with sweet soy, egg and prawn crackers", type: "nonveg" },
+            { category: "Asian", name: "Teriyaki Chicken", description: "Glazed chicken in Japanese teriyaki sauce with sesame seeds", type: "nonveg" },
+            { category: "Asian", name: "Schezwan Chicken", description: "Wok-tossed chicken in fiery Schezwan sauce with bell peppers", type: "nonveg" },
+            { category: "Asian", name: "Pad Thai", description: "Stir-fried rice noodles with peanuts, bean sprouts and lime", type: "veg" },
 
-        // Rice & Bowls
-        { category: "Rice & Bowls", name: "Jeera Rice", description: "Cumin-flavored basmati rice tempered with ghee", type: "veg" },
-        { category: "Rice & Bowls", name: "Steamed Rice", description: "Perfectly cooked plain basmati rice", type: "veg" },
-        { category: "Rice & Bowls", name: "Fried Rice", description: "Indo-Chinese style vegetable fried rice with soy sauce", type: "veg" },
-        { category: "Rice & Bowls", name: "Schezwan Fried Rice", description: "Spicy Schezwan-style fried rice with mixed vegetables", type: "veg" },
-        { category: "Rice & Bowls", name: "Mushroom Rice", description: "Basmati rice with sautéed mushrooms and herbs", type: "veg" },
+            // Rice & Bowls
+            { category: "Rice & Bowls", name: "Jeera Rice", description: "Cumin-flavored basmati rice tempered with ghee", type: "veg" },
+            { category: "Rice & Bowls", name: "Steamed Rice", description: "Perfectly cooked plain basmati rice", type: "veg" },
+            { category: "Rice & Bowls", name: "Fried Rice", description: "Indo-Chinese style vegetable fried rice with soy sauce", type: "veg" },
+            { category: "Rice & Bowls", name: "Schezwan Fried Rice", description: "Spicy Schezwan-style fried rice with mixed vegetables", type: "veg" },
+            { category: "Rice & Bowls", name: "Mushroom Rice", description: "Basmati rice with sautéed mushrooms and herbs", type: "veg" },
 
-        // Noodles
-        { category: "Noodles", name: "Veg Noodles", description: "Stir-fried vegetables with egg-free noodles in soy sauce", type: "veg" },
-        { category: "Noodles", name: "Chicken Noodles", description: "Noodles tossed with chicken strips and vegetables", type: "nonveg" },
-        { category: "Noodles", name: "Schezwan Noodles", description: "Fiery Schezwan-style noodles with bell peppers and garlic", type: "veg" },
-        { category: "Noodles", name: "Hakka Noodles", description: "Classic Indo-Chinese Hakka noodles with fresh vegetables", type: "veg" },
-        { category: "Noodles", name: "Egg Noodles", description: "Wok-fried noodles with scrambled eggs and spring onions", type: "nonveg" },
+            // Noodles
+            { category: "Noodles", name: "Veg Noodles", description: "Stir-fried vegetables with egg-free noodles in soy sauce", type: "veg" },
+            { category: "Noodles", name: "Chicken Noodles", description: "Noodles tossed with chicken strips and vegetables", type: "nonveg" },
+            { category: "Noodles", name: "Schezwan Noodles", description: "Fiery Schezwan-style noodles with bell peppers and garlic", type: "veg" },
+            { category: "Noodles", name: "Hakka Noodles", description: "Classic Indo-Chinese Hakka noodles with fresh vegetables", type: "veg" },
+            { category: "Noodles", name: "Egg Noodles", description: "Wok-fried noodles with scrambled eggs and spring onions", type: "nonveg" },
 
-        // Desserts
-        { category: "Desserts", name: "Gulab Jamun", description: "Deep-fried milk dumplings soaked in rose-flavored sugar syrup", type: "veg" },
-        { category: "Desserts", name: "Rasmalai", description: "Soft cottage cheese patties in saffron and cardamom milk", type: "veg" },
-        { category: "Desserts", name: "Chocolate Lava Cake", description: "Warm dark chocolate cake with a molten chocolate center", type: "veg" },
-        { category: "Desserts", name: "Cheesecake", description: "Classic New York-style baked cheesecake with berry compote", type: "veg" },
-        { category: "Desserts", name: "Tiramisu", description: "Italian coffee-flavored dessert with mascarpone and cocoa", type: "veg" },
-        { category: "Desserts", name: "Gulab Jamun Scoop", description: "Gulab jamun served with vanilla ice cream and rose syrup", type: "veg" },
-        { category: "Desserts", name: "Mango Kulfi", description: "Traditional Indian ice cream with Alphonso mango and pistachios", type: "veg" }
-    ];
+            // Desserts
+            { category: "Desserts", name: "Gulab Jamun", description: "Deep-fried milk dumplings soaked in rose-flavored sugar syrup", type: "veg" },
+            { category: "Desserts", name: "Rasmalai", description: "Soft cottage cheese patties in saffron and cardamom milk", type: "veg" },
+            { category: "Desserts", name: "Chocolate Lava Cake", description: "Warm dark chocolate cake with a molten chocolate center", type: "veg" },
+            { category: "Desserts", name: "Cheesecake", description: "Classic New York-style baked cheesecake with berry compote", type: "veg" },
+            { category: "Desserts", name: "Tiramisu", description: "Italian coffee-flavored dessert with mascarpone and cocoa", type: "veg" },
+            { category: "Desserts", name: "Gulab Jamun Scoop", description: "Gulab jamun served with vanilla ice cream and rose syrup", type: "veg" },
+            { category: "Desserts", name: "Mango Kulfi", description: "Traditional Indian ice cream with Alphonso mango and pistachios", type: "veg" }
+        ];
 
-    /* =====================================================================
-       OPENING ANIMATION
-       ===================================================================== */
-    function initOpeningAnimation() {
-        const overlay = document.getElementById('openingOverlay');
-        if (!overlay) return;
+        /* =====================================================================
+           OPENING ANIMATION
+           ===================================================================== */
+        function initOpeningAnimation() {
+            const overlay = document.getElementById('openingOverlay');
+            if (!overlay) return;
 
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-        if (reducedMotion) {
-            overlay.classList.add('hidden');
-            document.body.style.overflow = '';
-            initWelcomePopup();
-            return;
-        }
-
-        document.body.style.overflow = 'hidden';
-        setTimeout(function() {
-            overlay.classList.add('hidden');
-            document.body.style.overflow = '';
-            initWelcomePopup();
-        }, 2800);
-    }
-
-    /* =====================================================================
-       WELCOME POPUP
-       ===================================================================== */
-    function initWelcomePopup() {
-        var WELCOME_KEY = 'elite-aromas-welcomed';
-        var overlay = document.getElementById('welcomeOverlay');
-        var closeBtn = document.getElementById('welcomeClose');
-        var exploreBtn = document.getElementById('welcomeExploreBtn');
-
-        if (!overlay) return;
-
-        try {
-            if (sessionStorage.getItem(WELCOME_KEY)) {
-                overlay.classList.remove('active');
-                return;
-            }
-        } catch(e) {}
-
-        setTimeout(function() {
-            overlay.classList.add('active');
-        }, 300);
-
-        function closePopup() {
-            overlay.classList.remove('active');
-            try { sessionStorage.setItem(WELCOME_KEY, '1'); } catch(e) {}
-        }
-
-        if (closeBtn) closeBtn.addEventListener('click', closePopup);
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) closePopup();
-        });
-
-        if (exploreBtn) {
-            exploreBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                closePopup();
-                var menuSection = document.getElementById('menu');
-                if (menuSection) {
-                    menuSection.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        }
-    }
-
-    /* =====================================================================
-       HEADER SCROLL
-       ===================================================================== */
-    function initHeaderScroll() {
-        var header = document.getElementById('siteHeader');
-        if (!header) return;
-
-        var lastScroll = 0;
-        window.addEventListener('scroll', function() {
-            var scrollY = window.pageYOffset || document.documentElement.scrollTop;
-            if (scrollY > 60) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-            lastScroll = scrollY;
-        }, { passive: true });
-    }
-
-    /* =====================================================================
-       ACTIVE NAV LINK
-       ===================================================================== */
-    function initActiveNav() {
-        var sections = document.querySelectorAll('section[id]');
-        var navLinks = document.querySelectorAll('.header-nav a, .mobile-menu a[href^="#"]');
-
-        function onScroll() {
-            var scrollY = window.pageYOffset + 150;
-            sections.forEach(function(section) {
-                var top = section.offsetTop;
-                var height = section.offsetHeight;
-                var id = section.getAttribute('id');
-                if (scrollY >= top && scrollY < top + height) {
-                    navLinks.forEach(function(link) {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        onScroll();
-    }
-
-    /* =====================================================================
-       SMOOTH SCROLL
-       ===================================================================== */
-    function initSmoothScroll() {
-        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-            anchor.addEventListener('click', function(e) {
-                var targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                var target = document.querySelector(targetId);
-                if (target) {
-                    e.preventDefault();
-                    var headerH = document.getElementById('siteHeader').offsetHeight || 80;
-                    var top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
-                    window.scrollTo({ top: top, behavior: 'smooth' });
-                }
-            });
-        });
-    }
-
-    /* =====================================================================
-       MOBILE MENU
-       ===================================================================== */
-    function initMobileMenu() {
-        var btn = document.getElementById('hamburgerBtn');
-        var menu = document.getElementById('mobileMenu');
-        if (!btn || !menu) return;
-
-        btn.addEventListener('click', function() {
-            var isOpen = menu.classList.contains('active');
-            menu.classList.toggle('active');
-            btn.classList.toggle('active');
-            btn.setAttribute('aria-expanded', !isOpen);
-            document.body.style.overflow = isOpen ? '' : 'hidden';
-        });
-
-        menu.querySelectorAll('a').forEach(function(link) {
-            link.addEventListener('click', function() {
-                menu.classList.remove('active');
-                btn.classList.remove('active');
-                btn.setAttribute('aria-expanded', 'false');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reducedMotion) {
+                overlay.classList.add('hidden');
                 document.body.style.overflow = '';
-            });
-        });
-    }
-
-    /* =====================================================================
-       SCROLL REVEAL
-       ===================================================================== */
-    function initScrollReveal() {
-        var elements = document.querySelectorAll('.reveal');
-        if (!elements.length) return;
-
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-        elements.forEach(function(el) {
-            observer.observe(el);
-        });
-    }
-
-    /* =====================================================================
-       MENU RENDERING & FILTERING
-       ===================================================================== */
-    function initMenu() {
-        var grid = document.getElementById('menuGrid');
-        var tabs = document.getElementById('menuTabs');
-        var search = document.getElementById('menuSearch');
-        if (!grid || !tabs) return;
-
-        var currentCategory = 'all';
-        var searchQuery = '';
-
-        function renderMenu() {
-            var filtered = menuItems.filter(function(item) {
-                var matchCategory = currentCategory === 'all' || item.category === currentCategory;
-                var matchSearch = !searchQuery || item.name.toLowerCase().indexOf(searchQuery) !== -1 || item.description.toLowerCase().indexOf(searchQuery) !== -1 || item.category.toLowerCase().indexOf(searchQuery) !== -1;
-                return matchCategory && matchSearch;
-            });
-
-            if (filtered.length === 0) {
-                grid.innerHTML = '<p class="menu-empty">No items found. Try a different search or category.</p>';
+                initWelcomePopup();
                 return;
             }
 
-            grid.innerHTML = filtered.map(function(item) {
-                return '<div class="menu-card">' +
-                    '<div class="menu-card-header">' +
+            document.body.style.overflow = 'hidden';
+            setTimeout(function () {
+                overlay.classList.add('hidden');
+                document.body.style.overflow = '';
+                initWelcomePopup();
+            }, 2800);
+        }
+
+        /* =====================================================================
+           WELCOME POPUP
+           ===================================================================== */
+        function initWelcomePopup() {
+            var WELCOME_KEY = 'elite-aromas-welcomed';
+            var overlay = document.getElementById('welcomeOverlay');
+            var closeBtn = document.getElementById('welcomeClose');
+            var exploreBtn = document.getElementById('welcomeExploreBtn');
+
+            if (!overlay) return;
+
+            try {
+                if (sessionStorage.getItem(WELCOME_KEY)) {
+                    overlay.classList.remove('active');
+                    return;
+                }
+            } catch (e) { }
+
+            setTimeout(function () {
+                overlay.classList.add('active');
+            }, 300);
+
+            function closePopup() {
+                overlay.classList.remove('active');
+                try { sessionStorage.setItem(WELCOME_KEY, '1'); } catch (e) { }
+            }
+
+            if (closeBtn) closeBtn.addEventListener('click', closePopup);
+            overlay.addEventListener('click', function (e) {
+                if (e.target === overlay) closePopup();
+            });
+
+            if (exploreBtn) {
+                exploreBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    closePopup();
+                    var targetSection = document.getElementById('about') || document.getElementById('home');
+                    if (targetSection) {
+                        targetSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+        }
+
+        /* =====================================================================
+           HEADER SCROLL
+           ===================================================================== */
+        function initHeaderScroll() {
+            var header = document.getElementById('siteHeader');
+            if (!header) return;
+
+            var lastScroll = 0;
+            window.addEventListener('scroll', function () {
+                var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollY > 60) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                lastScroll = scrollY;
+            }, { passive: true });
+        }
+
+        /* =====================================================================
+           ACTIVE NAV LINK
+           ===================================================================== */
+        function initActiveNav() {
+            var sections = document.querySelectorAll('section[id]');
+            var navLinks = document.querySelectorAll('.header-nav a, .mobile-menu a[href^="#"]');
+
+            function onScroll() {
+                var scrollY = window.pageYOffset + 150;
+                sections.forEach(function (section) {
+                    var top = section.offsetTop;
+                    var height = section.offsetHeight;
+                    var id = section.getAttribute('id');
+                    if (scrollY >= top && scrollY < top + height) {
+                        navLinks.forEach(function (link) {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === '#' + id) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        }
+
+        /* =====================================================================
+           SMOOTH SCROLL
+           ===================================================================== */
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+                anchor.addEventListener('click', function (e) {
+                    var targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    var target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        var headerH = document.getElementById('siteHeader').offsetHeight || 80;
+                        var top = target.getBoundingClientRect().top + window.pageYOffset - headerH;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        /* =====================================================================
+           MOBILE MENU
+           ===================================================================== */
+        function initMobileMenu() {
+            var btn = document.getElementById('hamburgerBtn');
+            var menu = document.getElementById('mobileMenu');
+            if (!btn || !menu) return;
+
+            btn.addEventListener('click', function () {
+                var isOpen = menu.classList.contains('active');
+                menu.classList.toggle('active');
+                btn.classList.toggle('active');
+                btn.setAttribute('aria-expanded', !isOpen);
+                document.body.style.overflow = isOpen ? '' : 'hidden';
+            });
+
+            menu.querySelectorAll('a').forEach(function (link) {
+                link.addEventListener('click', function () {
+                    menu.classList.remove('active');
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-expanded', 'false');
+                    document.body.style.overflow = '';
+                });
+            });
+        }
+
+        /* =====================================================================
+           SCROLL REVEAL
+           ===================================================================== */
+        function initScrollReveal() {
+            var elements = document.querySelectorAll('.reveal');
+            if (!elements.length) return;
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            elements.forEach(function (el) {
+                observer.observe(el);
+            });
+        }
+
+        /* =====================================================================
+           MENU RENDERING & FILTERING
+           ===================================================================== */
+        function initMenu() {
+            var grid = document.getElementById('menuGrid');
+            var tabs = document.getElementById('menuTabs');
+            var search = document.getElementById('menuSearch');
+            if (!grid || !tabs) return;
+
+            var currentCategory = 'all';
+            var searchQuery = '';
+
+            function renderMenu() {
+                var filtered = menuItems.filter(function (item) {
+                    var matchCategory = currentCategory === 'all' || item.category === currentCategory;
+                    var matchSearch = !searchQuery || item.name.toLowerCase().indexOf(searchQuery) !== -1 || item.description.toLowerCase().indexOf(searchQuery) !== -1 || item.category.toLowerCase().indexOf(searchQuery) !== -1;
+                    return matchCategory && matchSearch;
+                });
+
+                if (filtered.length === 0) {
+                    grid.innerHTML = '<p class="menu-empty">No items found. Try a different search or category.</p>';
+                    return;
+                }
+
+                grid.innerHTML = filtered.map(function (item) {
+                    return '<div class="menu-card">' +
+                        '<div class="menu-card-header">' +
                         '<h4 class="menu-card-name">' + escapeHtml(item.name) + '</h4>' +
                         '<div class="menu-card-type ' + item.type + '" title="' + (item.type === 'veg' ? 'Vegetarian' : 'Non-Vegetarian') + '"></div>' +
-                    '</div>' +
-                    '<p class="menu-card-desc">' + escapeHtml(item.description) + '</p>' +
-                    '<p class="menu-card-price">Price: Coming Soon</p>' +
-                '</div>';
-            }).join('');
-        }
+                        '</div>' +
+                        '<p class="menu-card-desc">' + escapeHtml(item.description) + '</p>' +
+                        '<p class="menu-card-price">Price: Coming Soon</p>' +
+                        '</div>';
+                }).join('');
+            }
 
-        function escapeHtml(str) {
-            var div = document.createElement('div');
-            div.appendChild(document.createTextNode(str));
-            return div.innerHTML;
-        }
+            function escapeHtml(str) {
+                var div = document.createElement('div');
+                div.appendChild(document.createTextNode(str));
+                return div.innerHTML;
+            }
 
-        // Tabs
-        tabs.addEventListener('click', function(e) {
-            var tab = e.target.closest('.menu-tab');
-            if (!tab) return;
-            tabs.querySelectorAll('.menu-tab').forEach(function(t) {
-                t.classList.remove('active');
-                t.setAttribute('aria-selected', 'false');
+            // Tabs
+            tabs.addEventListener('click', function (e) {
+                var tab = e.target.closest('.menu-tab');
+                if (!tab) return;
+                tabs.querySelectorAll('.menu-tab').forEach(function (t) {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                currentCategory = tab.getAttribute('data-category');
+                renderMenu();
             });
-            tab.classList.add('active');
-            tab.setAttribute('aria-selected', 'true');
-            currentCategory = tab.getAttribute('data-category');
+
+            // Search
+            if (search) {
+                var searchTimeout;
+                search.addEventListener('input', function () {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(function () {
+                        searchQuery = search.value.trim().toLowerCase();
+                        renderMenu();
+                    }, 200);
+                });
+            }
+
             renderMenu();
-        });
-
-        // Search
-        if (search) {
-            var searchTimeout;
-            search.addEventListener('input', function() {
-                clearTimeout(searchTimeout);
-                searchTimeout = setTimeout(function() {
-                    searchQuery = search.value.trim().toLowerCase();
-                    renderMenu();
-                }, 200);
-            });
         }
 
-        renderMenu();
-    }
-
-    /* =====================================================================
-       INIT
-       ===================================================================== */
-    document.addEventListener('DOMContentLoaded', function() {
-        initOpeningAnimation();
-        initHeaderScroll();
-        initActiveNav();
-        initSmoothScroll();
-        initMobileMenu();
-        initScrollReveal();
-        initMenu();
-    });
+        /* =====================================================================
+           INIT
+           ===================================================================== */
+        document.addEventListener('DOMContentLoaded', function () {
+            initOpeningAnimation();
+            initHeaderScroll();
+            initActiveNav();
+            initSmoothScroll();
+            initMobileMenu();
+            initScrollReveal();
+            initMenu();
+        });
     </script>
 </body>
 
