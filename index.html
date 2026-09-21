@@ -52,7 +52,7 @@
         "name": "Elite Aroma's Café & Bistro",
         "image": "https://aromahospitality.co.in/images/logo.jpeg",
         "url": "https://aromahospitality.co.in/",
-        "telephone": "+919819209279",
+        "telephone": "+919819734999",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "Shop No. G6 (Ground Floor), Tulip Shopping Center, Building No. 2, Godrej Hill Road, Khadakpada",
@@ -1098,6 +1098,170 @@
         }
 
         /* ==========================================================================
+           8.1 EXPLORE OUR MENU (HOME PREVIEW)
+           ========================================================================== */
+        .section-subtitle {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            max-width: 560px;
+            margin: 16px auto 0;
+            line-height: 1.7;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .preview-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius);
+            padding: 30px 20px 26px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .preview-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 44px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--border);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35), 0 0 30px -12px var(--accent-glow);
+        }
+
+        .preview-card:hover::before {
+            opacity: 1;
+        }
+
+        .preview-card-mark {
+            width: 54px;
+            height: 54px;
+            margin: 0 auto 14px;
+            border-radius: 50%;
+            background: var(--accent-soft);
+            border: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .preview-card-name {
+            font-family: var(--font-heading);
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+
+        .preview-card-tagline {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+
+        .preview-cta {
+            text-align: center;
+            margin-top: 44px;
+        }
+
+        .preview-cta .btn-primary {
+            padding: 16px 42px;
+            font-size: 1.02rem;
+        }
+
+        .preview-cta .btn-primary svg {
+            width: 18px;
+            height: 18px;
+            transition: transform 0.3s;
+        }
+
+        .preview-cta .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* ==========================================================================
+           8.2 MENU TOOLBAR / DOWNLOAD / DISCLAIMER
+           ========================================================================== */
+        .menu-toolbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 32px;
+        }
+
+        .menu-toolbar .menu-search-wrap {
+            margin: 0;
+            max-width: 460px;
+            flex: 1 1 320px;
+        }
+
+        .menu-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 26px;
+            background: var(--accent-soft);
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            border-radius: 999px;
+            white-space: nowrap;
+            transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+        }
+
+        .menu-download:hover {
+            background: var(--accent);
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .menu-download svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .menu-note {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            margin-top: 20px;
+        }
+
+        .menu-disclaimer {
+            text-align: center;
+            margin-top: 44px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            letter-spacing: 0.02em;
+        }
+
+        /* ==========================================================================
            9. CONTACT SECTION
            ========================================================================== */
         .contact-grid {
@@ -1495,6 +1659,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .preview-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+
+            .menu-toolbar {
+                flex-direction: column;
+            }
+
             .menu-tabs {
                 justify-content: flex-start;
                 flex-wrap: nowrap;
@@ -1604,7 +1776,7 @@
                 timeless quality.</p>
             <div class="welcome-badges">
                 <div class="welcome-badge">25+ Years of Hospitality Excellence</div>
-                <div class="welcome-badge welcome-badge-gold">Menu Coming Soon</div>
+                <div class="welcome-badge welcome-badge-gold">Full Menu Live</div>
             </div>
             <a href="#about" class="btn-primary" id="welcomeExploreBtn">Explore the Website</a>
         </div>
@@ -1620,11 +1792,12 @@
             </a>
             <nav class="header-nav" aria-label="Main navigation">
                 <a href="#home">Home</a>
+                <a href="#explore">Explore</a>
                 <a href="#about">About</a>
                 <a href="#menu">Menu</a>
                 <a href="#contact">Contact</a>
             </nav>
-            <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+            <a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                 class="header-wa" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
                 <svg viewBox="0 0 32 32" fill="currentColor">
                     <path
@@ -1641,10 +1814,11 @@
     <!-- Mobile Menu -->
     <div class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
         <a href="#home">Home</a>
+        <a href="#explore">Explore</a>
         <a href="#about">About</a>
         <a href="#menu">Menu</a>
         <a href="#contact">Contact</a>
-        <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+        <a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
             target="_blank" rel="noopener noreferrer" style="color: var(--whatsapp);">WhatsApp</a>
     </div>
 
@@ -1665,7 +1839,7 @@
             <p class="hero-subtitle reveal">Where Great Food Meets Exceptional Hospitality</p>
             <div class="hero-buttons reveal">
                 <a href="#menu" class="btn-primary">Explore Menu</a>
-                <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+                <a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                     class="btn-whatsapp" target="_blank" rel="noopener noreferrer">
                     <svg viewBox="0 0 32 32" fill="currentColor">
                         <path
@@ -1741,38 +1915,79 @@
     </section>
 
     <!-- =====================================================================
+         EXPLORE OUR MENU (HOME PREVIEW)
+         ===================================================================== -->
+    <section class="section" id="explore">
+        <div class="container">
+            <div class="section-header reveal">
+                <p class="section-label">Explore Our Menu</p>
+                <h2 class="section-title">A Taste of <span>Everything</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-subtitle">From soulful Indian classics to vibrant Asian flavours, every plate at
+                    Elite Aroma's is crafted to delight. Here's a glimpse of what awaits.</p>
+            </div>
+            <div class="preview-grid" id="previewGrid">
+                <!-- Preview category cards rendered by JavaScript -->
+            </div>
+            <div class="preview-cta reveal">
+                <a href="#menu" class="btn-primary">
+                    View All Menu
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12" />
+                        <polyline points="12 5 19 12 12 19" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================================
          MENU SECTION
          ===================================================================== -->
     <section class="section" id="menu" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="section-header reveal">
-                <h2 class="section-title">Our <span>Menu</span></h2>
-                <p class="section-label">Coming Soon</p>
+                <p class="section-label">Our Menu</p>
                 <h2 class="section-title">Culinary <span>Excellence</span></h2>
-                <!-- <div class="section-divider"></div> -->
+                <div class="section-divider"></div>
+                <p class="section-subtitle">A complete selection of dishes from our Non-AC menu — crafted daily with
+                    quality ingredients and served with genuine hospitality.</p>
             </div>
 
-            <!-- <div class="menu-search-wrap reveal">
-                <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="search" class="menu-search" id="menuSearch" placeholder="Search our menu..." aria-label="Search menu items">
+            <div class="menu-toolbar reveal">
+                <div class="menu-search-wrap">
+                    <svg class="menu-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                    <input type="search" class="menu-search" id="menuSearch" placeholder="Search our menu..."
+                        aria-label="Search menu items">
+                </div>
+                <a href="assets/elite-aromas-non-ac-menu.pdf" class="menu-download" download
+                    aria-label="Download the full menu as PDF">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg>
+                    Download Full Menu
+                </a>
             </div>
 
             <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Menu categories">
-                <button class="menu-tab active" data-category="all" role="tab" aria-selected="true">All</button>
-                <button class="menu-tab" data-category="Soups" role="tab" aria-selected="false">Soups</button>
-                <button class="menu-tab" data-category="Salads" role="tab" aria-selected="false">Salads</button>
-                <button class="menu-tab" data-category="Tandoor" role="tab" aria-selected="false">Tandoor</button>
-                <button class="menu-tab" data-category="Indian Mains" role="tab" aria-selected="false">Indian Mains</button>
-                <button class="menu-tab" data-category="Biryani & Rice" role="tab" aria-selected="false">Biryani &amp; Rice</button>
-                <button class="menu-tab" data-category="Asian" role="tab" aria-selected="false">Asian</button>
-                <button class="menu-tab" data-category="Rice & Bowls" role="tab" aria-selected="false">Rice &amp; Bowls</button>
-                <button class="menu-tab" data-category="Noodles" role="tab" aria-selected="false">Noodles</button>
-                <button class="menu-tab" data-category="Desserts" role="tab" aria-selected="false">Desserts</button>
-            </div> -->
+                <!-- Category tabs rendered by JavaScript -->
+            </div>
 
             <div class="menu-grid" id="menuGrid" role="tabpanel">
                 <!-- Menu cards rendered by JavaScript -->
             </div>
+
+            <p class="menu-note">H/F — Half / Full &nbsp;&bull;&nbsp; APS — As Per Size</p>
+
+            <p class="menu-disclaimer">GST extra as applicable.</p>
         </div>
     </section>
 
@@ -1811,8 +2026,8 @@
                         </svg>
                         <div>
                             <p class="contact-detail-label">Phone</p>
-                            <p class="contact-detail-value"><a href="tel:+919819209279"
-                                    style="color: var(--accent);">9819209279</a></p>
+                            <p class="contact-detail-value"><a href="tel:+919819734999"
+                                    style="color: var(--accent);">9819734999</a></p>
                         </div>
                     </div>
 
@@ -1829,7 +2044,7 @@
                     </div>
 
                     <div class="contact-buttons">
-                        <a href="tel:+919819209279" class="btn-primary btn-small">
+                        <a href="tel:+919819734999" class="btn-primary btn-small">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2">
                                 <path
@@ -1837,7 +2052,7 @@
                             </svg>
                             Call Now
                         </a>
-                        <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+                        <a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                             class="btn-whatsapp btn-small" target="_blank" rel="noopener noreferrer">
                             <svg viewBox="0 0 32 32" fill="currentColor">
                                 <path
@@ -1892,7 +2107,7 @@
                 <div>
                     <h4 class="footer-heading">Connect</h4>
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+                        <li><a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
                                 target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
                         <li><a href="https://www.google.com/maps/search/?api=1&query=Elite+Aroma+Cafe+Bistro+Khadakpada+Kalyan+West"
                                 target="_blank" rel="noopener noreferrer">Google Maps</a></li>
@@ -1913,7 +2128,7 @@
                             <path
                                 d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
                         </svg>
-                        <span><a href="tel:+919819209279" style="color: var(--accent);">9819209279</a></span>
+                        <span><a href="tel:+919819734999" style="color: var(--accent);">9819734999</a></span>
                     </div>
                     <div class="footer-contact-item">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1936,7 +2151,7 @@
     <!-- =====================================================================
          FLOATING WHATSAPP BUTTON
          ===================================================================== -->
-    <a href="https://wa.me/919819209279?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
+    <a href="https://wa.me/919819734999?text=Hello%20Elite%20Aroma%27s%20Caf%C3%A9%20%26%20Bistro%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu."
         class="wa-float" id="waFloat" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
         <svg viewBox="0 0 32 32">
             <path
@@ -1951,85 +2166,304 @@
         'use strict';
 
         /* =====================================================================
-           MENU DATA
+           MENU DATA (from the latest 20-page Non-AC Menu PDF)
            ===================================================================== */
         const menuItems = [
-            // Soups
-            { category: "Soups", name: "Veg Beijing Soup", description: "Clear broth with mirepoix and noodles", type: "veg" },
-            { category: "Soups", name: "Chicken Manchow Soup", description: "Spicy and sour soup garnished with crispy noodles", type: "nonveg" },
-            { category: "Soups", name: "Hot & Sour Soup", description: "Tangy and spicy soup with mixed vegetables and tofu", type: "veg" },
-            { category: "Soups", name: "Tomato Basil Soup", description: "Classic creamy tomato soup with fresh basil leaves", type: "veg" },
-            { category: "Soups", name: "Lemon Coriander Soup", description: "Light and refreshing broth with coriander and lemon zest", type: "veg" },
-            { category: "Soups", name: "Sweet Corn Soup", description: "Creamy sweet corn soup with mixed vegetables", type: "veg" },
-            { category: "Soups", name: "Mutton Pepper Soup", description: "Peppercorn-infused mutton broth with aromatic spices", type: "nonveg" },
+            // Soups & Rice Bowls
+            { category: "Soups & Rice Bowls", name: "Veg Beijing Soup", price: "150", type: "veg", desc: "Clear broth with mirepoix & noodles" },
+            { category: "Soups & Rice Bowls", name: "Himalayan Thukpa Soup", price: "150", type: "veg", desc: "A clear broth served with soba noodles and mirepoix" },
+            { category: "Soups & Rice Bowls", name: "Chicken Rice Bowls Soup", price: "180", type: "nonveg", desc: "Chicken balls and rice & carrot" },
+            { category: "Soups & Rice Bowls", name: "Himalayan Thukpa Chicken Soup", price: "200", type: "nonveg", desc: "A clear broth served with soba noodles and mirepoix" },
+            { category: "Soups & Rice Bowls", name: "Chicken Manchow Soup", price: "200", type: "nonveg", desc: "Spicy and sour garnished with crispy noodles & Indochinese favourite choice of veg-chicken-seafood" },
+            { category: "Soups & Rice Bowls", name: "Spicy Crabmeat Soup", price: "200", type: "nonveg", desc: "Arabian Sea crab meat, egg & finely chopped red chilli finishing with Chinese wine" },
+            { category: "Soups & Rice Bowls", name: "Veg Tomyum Soup", price: "200", type: "veg", desc: "Lemongrass galangal with red tomyum paste" },
+            { category: "Soups & Rice Bowls", name: "Thai Seafood & Clear Soup", price: "200", type: "nonveg", desc: "Lemongrass galangal Thai herb lemon leaf mix of seafood squid, prawns, basa fish, rice stick, noodles, Thai chilli with cherry tomato" },
+            { category: "Soups & Rice Bowls", name: "Chunk Noodles Soup", price: "200", type: "nonveg", desc: "Flat noodles, shiitake mushrooms, cherry tomatoes, scallion chicken-prawns" },
+            { category: "Soups & Rice Bowls", name: "Jhol Paya Soup", price: "200", type: "nonveg", desc: "Paya with Indian spice" },
+            { category: "Soups & Rice Bowls", name: "Sweet Corn Soup (Veg/Chicken)", price: "150/190", type: "veg", desc: "" },
+            { category: "Soups & Rice Bowls", name: "Lemon Coriander Soup (Veg/Chicken)", price: "120/150", type: "veg", desc: "" },
 
             // Salads
-            { category: "Salads", name: "Greek Salad", description: "Fresh vegetables with feta cheese, olives and olive oil dressing", type: "veg" },
-            { category: "Salads", name: "Caesar Salad", description: "Crisp romaine lettuce with parmesan, croutons and Caesar dressing", type: "veg" },
-            { category: "Salads", name: "Thai Salad", description: "Asian-style salad with peanuts, lime dressing and fresh herbs", type: "veg" },
-            { category: "Salads", name: "Mediterranean Salad", description: "Mixed greens with olives, sun-dried tomatoes and feta", type: "veg" },
-            { category: "Salads", name: "Grilled Chicken Salad", description: "Tender grilled chicken breast over seasonal greens with vinaigrette", type: "nonveg" },
-            { category: "Salads", name: "Prawn Salad", description: "Succulent prawns with citrus dressing and microgreens", type: "nonveg" },
+            { category: "Salads", name: "Jícama Chicken Kimchi", price: "200", type: "nonveg", desc: "With kimchi dressing" },
+            { category: "Salads", name: "Thai Peanut Salad", price: "200", type: "veg", desc: "Napa cabbage, cucumber, Thai peanut dressing, crispy noodles" },
+            { category: "Salads", name: "Avocado Shiitake Salad", price: "250", type: "veg", desc: "With avocado, romaine, iceberg, guava-spicy sesame dressing" },
+            { category: "Salads", name: "Mandarin Crunch Salad", price: "300", type: "nonveg", desc: "Mandarin orange, crunchy vegetables, crispy wonton strips, crispy rice sticks, mandarin vinaigrette, almonds, chicken" },
+            { category: "Salads", name: "Watermelon Prawns Salad", price: "250", type: "nonveg", desc: "Thai hub dressing, spicy and tangy" },
+            { category: "Salads", name: "Add On Chicken / Sea Meat", price: "100/180", type: "veg", desc: "" },
 
-            // Tandoor
-            { category: "Tandoor", name: "Tandoori Chicken", description: "Whole chicken marinated in yogurt and spices, cooked in clay oven", type: "nonveg" },
-            { category: "Tandoor", name: "Paneer Tikka", description: "Cottage cheese marinated in spiced yogurt and chargrilled", type: "veg" },
-            { category: "Tandoor", name: "Fish Tikka", description: "Fresh fish cubes marinated in tandoori spices and grilled", type: "nonveg" },
-            { category: "Tandoor", name: "Seekh Kebab", description: "Minced lamb kebabs with herbs and spices on skewers", type: "nonveg" },
-            { category: "Tandoor", name: "Malai Tikka", description: "Cream and cheese marinated chicken with mild aromatic spices", type: "nonveg" },
-            { category: "Tandoor", name: "Tandoori Prawns", description: "Jumbo prawns in tandoori marinade, chargrilled to perfection", type: "nonveg" },
-            { category: "Tandoor", name: "Aloo Tikki", description: "Crispy spiced potato patties with mint chutney", type: "veg" },
+            // Veg Tandoor Appetizer
+            { category: "Veg Tandoor Appetizer", name: "Madras Paneer Tikka", price: "300", type: "veg", desc: "Curry emulsion" },
+            { category: "Veg Tandoor Appetizer", name: "Benne Kali Mirch Paneer Tikka", price: "300", type: "veg", desc: "Gingelly & cashew nut infused marinated" },
+            { category: "Veg Tandoor Appetizer", name: "Nadru Ke Kebab", price: "300", type: "veg", desc: "Shallow fried & served" },
+            { category: "Veg Tandoor Appetizer", name: "Allahabadi Paneer Tikka", price: "300", type: "veg", desc: "Stuffed with processed cheese & bell pepper" },
+            { category: "Veg Tandoor Appetizer", name: "Quinoa Paneer Ka Seekh", price: "300", type: "veg", desc: "Malai cottage seekh served with a mild sauce on top" },
+            { category: "Veg Tandoor Appetizer", name: "Paneer Dahi Ke Chole Kebab", price: "300", type: "veg", desc: "" },
+            { category: "Veg Tandoor Appetizer", name: "Mushroom Stuff Kebab", price: "300", type: "veg", desc: "" },
+            { category: "Veg Tandoor Appetizer", name: "Paneer Achari Tikka", price: "300", type: "veg", desc: "" },
+            { category: "Veg Tandoor Appetizer", name: "Mushroom Multani Tikka", price: "300", type: "veg", desc: "" },
+            { category: "Veg Tandoor Appetizer", name: "Thecha Tawa Fry Paneer", price: "350", type: "veg", desc: "" },
 
-            // Indian Mains
-            { category: "Indian Mains", name: "Butter Chicken", description: "Tender chicken in rich, creamy tomato-based gravy with butter", type: "nonveg" },
-            { category: "Indian Mains", name: "Paneer Butter Masala", description: "Cottage cheese cubes in velvety tomato and butter gravy", type: "veg" },
-            { category: "Indian Mains", name: "Dal Makhani", description: "Slow-cooked black lentils simmered overnight in butter and cream", type: "veg" },
-            { category: "Indian Mains", name: "Chicken Curry", description: "Traditional homestyle chicken curry with aromatic spices", type: "nonveg" },
-            { category: "Indian Mains", name: "Mutton Rogan Josh", description: "Aromatic Kashmiri-style lamb curry with whole spices", type: "nonveg" },
-            { category: "Indian Mains", name: "Fish Curry", description: "Coastal-style tangy fish curry with kokum and coconut", type: "nonveg" },
-            { category: "Indian Mains", name: "Kadhai Paneer", description: "Cottage cheese in bell pepper and onion gravy with kadhai spices", type: "veg" },
-            { category: "Indian Mains", name: "Chole Masala", description: "Spiced chickpea curry served with traditional Punjabi masala", type: "veg" },
-            { category: "Indian Mains", name: "Palak Paneer", description: "Cottage cheese cubes in creamy spinach gravy", type: "veg" },
+            // Non-Veg Tandoor Appetizer
+            { category: "Non-Veg Tandoor Appetizer", name: "Thecha Chicken With Garlic", price: "350", type: "nonveg", desc: "With bones, Maharashtrian style" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Pahadi Kebab", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Reshmi Kebab", price: "350", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Banjara Kebab", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Rojali Kebab", price: "375", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Tandoori Lollipop", price: "350", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Tandoori Chicken Afghani (H/F)", price: "450/575", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Tandoori (H/F)", price: "450/575", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Kali Miri Tikka", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Tikka", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Chicken Thecha Masala Tawa Fry", price: "350", type: "nonveg", desc: "" },
+            { category: "Non-Veg Tandoor Appetizer", name: "Grilled Tawa Fry Chicken Masala", price: "350", type: "nonveg", desc: "" },
+
+            // Seafood Malwani Grills
+            { category: "Seafood Malwani Grills", name: "Malwani Pomfret Tawa Fry", price: "APS", type: "nonveg", desc: "" },
+            { category: "Seafood Malwani Grills", name: "Kandari Surmai Slice Tawa Fry", price: "APS", type: "nonveg", desc: "" },
+            { category: "Seafood Malwani Grills", name: "Prawns Kala Masala Tawa Fry", price: "APS", type: "nonveg", desc: "" },
+            { category: "Seafood Malwani Grills", name: "Bangda Tawa Fry Pepper", price: "APS", type: "nonveg", desc: "" },
+
+            // Veg Small Plates Asian
+            { category: "Veg Small Plates Asian", name: "Crispy Lotus Teriyaki Sauce", price: "450", type: "veg", desc: "" },
+            { category: "Veg Small Plates Asian", name: "Crispy Potato Balinese Style", price: "300", type: "veg", desc: "Balinese sauce" },
+            { category: "Veg Small Plates Asian", name: "Crispy Lotus With Avocado", price: "380", type: "veg", desc: "Crispy fried lotus & spicy avocado on top" },
+            { category: "Veg Small Plates Asian", name: "Zang Chilli Potato", price: "300", type: "veg", desc: "In chilli paste, oyster sauce, red-yellow pepper, Thai chilli with fresh coriander" },
+            { category: "Veg Small Plates Asian", name: "Thai Cashew Corn Balls", price: "300", type: "veg", desc: "In cashew sauce" },
+            { category: "Veg Small Plates Asian", name: "Shitake Mushroom Uddan", price: "300", type: "veg", desc: "Sambal sauce, chilli oil, light soya wine" },
+            { category: "Veg Small Plates Asian", name: "Thai Chilli Potato", price: "300", type: "veg", desc: "Fresh Thai chilli, Thai ginger, basil leaf with Cajun spice with oyster sauce" },
+            { category: "Veg Small Plates Asian", name: "Thai Crispy Corn", price: "300", type: "veg", desc: "Red yellow pepper, coriander, garlic, Thai chilli chop with oyster sauce" },
+            { category: "Veg Small Plates Asian", name: "Sapo Silken Tofu", price: "380", type: "veg", desc: "Assorted pepper, with cumin spice, Thai chilli sauce" },
+            { category: "Veg Small Plates Asian", name: "Exotic Vegetable Tempura", price: "300", type: "veg", desc: "Tempura vegies with Thai chilli" },
+            { category: "Veg Small Plates Asian", name: "Silken Tofu Crunchy Spinach Truffles", price: "395", type: "veg", desc: "Truffle oil, peri-peri spice" },
+            { category: "Veg Small Plates Asian", name: "Cashewnut Tofu Hoisin Sauce", price: "400", type: "veg", desc: "" },
+
+            // Non-Veg Small Plates Asian
+            { category: "Non-Veg Small Plates Asian", name: "Chicken Nugget", price: "300", type: "nonveg", desc: "Deep fry with dip sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Fish Nugget", price: "325", type: "nonveg", desc: "Deep fry with dip sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Sapo Chicken", price: "325", type: "nonveg", desc: "Assorted pepper, scallion, chicken in red pepper sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Screwdriver Chicken", price: "325", type: "nonveg", desc: "Chicken wrapped with sheet" },
+            { category: "Non-Veg Small Plates Asian", name: "Chicken Bunchai", price: "325", type: "nonveg", desc: "Sapo sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Conji Crispy Lamb", price: "425", type: "nonveg", desc: "Sweet chilli pineapple sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Pattaya Fish In Sauce", price: "APS", type: "nonveg", desc: "" },
+            { category: "Non-Veg Small Plates Asian", name: "Thai Butter Garlic Crispy Prawns", price: "APS", type: "nonveg", desc: "" },
+            { category: "Non-Veg Small Plates Asian", name: "Angel Crispy Fry Lollipop", price: "300", type: "nonveg", desc: "Thai herbs with dip sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Zang Chilli Chicken", price: "380", type: "nonveg", desc: "In chilli paste, oyster sauce, red-yellow pepper, Thai chilli with fresh coriander" },
+            { category: "Non-Veg Small Plates Asian", name: "Crispy Chicken Char Siu Sauce", price: "300", type: "nonveg", desc: "Char Siu sauce with chicken" },
+            { category: "Non-Veg Small Plates Asian", name: "Bang Bang Chicken", price: "300", type: "nonveg", desc: "Fresh chilli with bell pepper scallion sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Panang Chicken", price: "300", type: "nonveg", desc: "Fresh chilli paste with tomato ketchup & fresh Thai chilli, cinnamon stick" },
+            { category: "Non-Veg Small Plates Asian", name: "Mountain Chilli Prawns", price: "360", type: "nonveg", desc: "Fresh mountain chilli sauce, garlic, fresh chilli, oyster sauce" },
+            { category: "Non-Veg Small Plates Asian", name: "Chicken Lollipop", price: "300", type: "nonveg", desc: "" },
+
+            // Dim Sum & Bao
+            { category: "Dim Sum & Bao", name: "Spicy Sweet Chilli Lotus", price: "350", type: "veg", desc: "Honey sweet chilli sauce, fresh red chilli, lettuce" },
+            { category: "Dim Sum & Bao", name: "Crispy Rock Corn Bao", price: "280", type: "veg", desc: "Fresh American corn, oyster sauce, teriyaki sauce, white sesame seeds, mayonnaise" },
+            { category: "Dim Sum & Bao", name: "Coriander Spicy Bao", price: "300", type: "veg", desc: "Lotus flower with spicy coriander bao" },
+            { category: "Dim Sum & Bao", name: "Mushroom Dim Sum", price: "300", type: "veg", desc: "Shiitake mushroom, carrot, celery stick, oyster sauce with spice onion" },
+            { category: "Dim Sum & Bao", name: "Truffle Edamame", price: "400", type: "veg", desc: "" },
+            { category: "Dim Sum & Bao", name: "Chicken BBQ Bao", price: "300", type: "nonveg", desc: "BBQ sauce, lettuce, mayo sauce" },
+            { category: "Dim Sum & Bao", name: "Momos (Veg / Paneer / Cheese / Mushroom)", price: "250/275/280/280", type: "veg", desc: "" },
+            { category: "Dim Sum & Bao", name: "Chicken Momos", price: "290", type: "nonveg", desc: "" },
+
+            // Veg Indian Mains
+            { category: "Veg Indian Mains", name: "Irani Soya Keema With Yellow Pepper Gravy", price: "250", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Paneer Butter Masala", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Thecha Paneer Masala", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Paneer Patiyala", price: "225", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Methi Mutter Malai", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Mix Veg Masala", price: "175", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Veg Kolhapuri", price: "175", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Paneer Tikka Masala", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Kadhai Paneer", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Lasuni Palak Paneer", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Mutter Paneer", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Mushroom Kadhai", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Mushroom Tikka Masala", price: "200", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Dal Fry", price: "150", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Dal Tadka", price: "150", type: "veg", desc: "" },
+            { category: "Veg Indian Mains", name: "Paneer Quali With Kali Dakh", price: "250", type: "veg", desc: "Cottage cheese cooked with raw turmeric paste and almond" },
+
+            // Non-Veg Indian Mains
+            { category: "Non-Veg Indian Mains", name: "Ladakhi Chicken Tariwala", price: "300", type: "nonveg", desc: "Country style chicken curry" },
+            { category: "Non-Veg Indian Mains", name: "Bhang Ka Chicken", price: "300", type: "nonveg", desc: "Cannabis seeds & coriander gravy" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Ghotala", price: "300", type: "nonveg", desc: "Slow cooked minced chicken" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Mangalorean Curry", price: "300", type: "nonveg", desc: "Traditional Mangalorean style" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Tikka Masala", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Kadhai Chicken", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Palak", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Thecha Chicken Masala", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Kali Mirch Masala", price: "300", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Punjabi Butter Chicken (H/F)", price: "375/525", type: "nonveg", desc: "Makhani tomato gravy, sweet & spice" },
+            { category: "Non-Veg Indian Mains", name: "Mutton Kulambu", price: "400", type: "nonveg", desc: "Succulent slow cooked meat" },
+            { category: "Non-Veg Indian Mains", name: "Mutton Rogan Josh", price: "400", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Mutton Kadhai", price: "400", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Mutton Lapeta", price: "400", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Masala Fry Fish", price: "APS", type: "nonveg", desc: "Surmai / Pomfret / Bangda" },
+            { category: "Non-Veg Indian Mains", name: "Fish Goan Curry", price: "APS", type: "nonveg", desc: "Surmai / Pomfret / Bangda" },
+            { category: "Non-Veg Indian Mains", name: "Prawns Goan Curry", price: "450", type: "nonveg", desc: "" },
+            { category: "Non-Veg Indian Mains", name: "Chettinad Fish Curry", price: "APS", type: "nonveg", desc: "Surmai / Pomfret / Bangda" },
+            { category: "Non-Veg Indian Mains", name: "Chicken Curry With Neer Dosa", price: "250", type: "nonveg", desc: "" },
+
+            // Veg Mains Asian
+            { category: "Veg Mains Asian", name: "Burmese Lotus Curry", price: "300", type: "veg", desc: "Lotus curry" },
+            { category: "Veg Mains Asian", name: "Vegetable Sambal Sauce", price: "300", type: "veg", desc: "Napa cabbage, bok choy, broccoli, zucchini, carrot" },
+            { category: "Veg Mains Asian", name: "Sapo Vegetable Sauce", price: "300", type: "veg", desc: "Napa cabbage, bok choy, broccoli, zucchini, carrot" },
+            { category: "Veg Mains Asian", name: "Red Ginger Sauce Vegetable", price: "300", type: "veg", desc: "Napa cabbage, bok choy, broccoli, zucchini, carrot" },
+            { category: "Veg Mains Asian", name: "Veg Thai Curry with Steam/Jasmine Rice", price: "350", type: "veg", desc: "" },
+            { category: "Veg Mains Asian", name: "Massaman Curry", price: "350", type: "veg", desc: "" },
+            { category: "Veg Mains Asian", name: "Cottage Cheese with Honey Sauce", price: "350", type: "veg", desc: "" },
+
+            // Non-Veg Mains Asian
+            { category: "Non-Veg Mains Asian", name: "Roasted Chicken Coriander Sauce", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Prawns", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Chicken In Mushroom Sauce", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Crispy Chicken With Honey Sauce", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Ginger Chicken", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Ginger Wine Chicken", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Hunan Chicken", price: "325", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Rendang Lamb", price: "450", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Thai Curry (Chicken/Prawns/Fish)", price: "400/450/500", type: "nonveg", desc: "" },
+            { category: "Non-Veg Mains Asian", name: "Massaman Curry (Chicken/Prawns/Fish)", price: "400/450/500", type: "nonveg", desc: "" },
+
+            // Indian Breads
+            { category: "Indian Breads", name: "Tandoor Roti", price: "25", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Tandoor Butter Roti", price: "30", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Tandoor Naan", price: "40", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Tandoor Butter Naan", price: "45", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Garlic Naan", price: "60", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Kashmiri Naan", price: "70", type: "veg", desc: "" },
+            { category: "Indian Breads", name: "Khameri Naan", price: "80", type: "veg", desc: "" },
 
             // Biryani & Rice
-            { category: "Biryani & Rice", name: "Chicken Biryani", description: "Aromatic basmati rice layered with spiced chicken, cooked on dum", type: "nonveg" },
-            { category: "Biryani & Rice", name: "Mutton Biryani", description: "Slow-cooked mutton biryani with saffron and whole spices", type: "nonveg" },
-            { category: "Biryani & Rice", name: "Veg Biryani", description: "Fragrant basmati rice with mixed vegetables and mint", type: "veg" },
-            { category: "Biryani & Rice", name: "Hyderabadi Biryani", description: "Authentic dum-style biryani with tender meat and caramelized onions", type: "nonveg" },
-            { category: "Biryani & Rice", name: "Egg Biryani", description: "Basmati rice with boiled eggs, saffron and aromatic spices", type: "nonveg" },
-
-            // Asian
-            { category: "Asian", name: "Thai Green Curry", description: "Coconut-based green curry with vegetables and Thai basil", type: "veg" },
-            { category: "Asian", name: "Thai Red Curry", description: "Spicy red curry with coconut milk, vegetables and Thai herbs", type: "veg" },
-            { category: "Asian", name: "Chinese Stir Fry", description: "Mixed vegetables wok-tossed in soy and garlic sauce", type: "veg" },
-            { category: "Asian", name: "Nasi Goreng", description: "Indonesian-style fried rice with sweet soy, egg and prawn crackers", type: "nonveg" },
-            { category: "Asian", name: "Teriyaki Chicken", description: "Glazed chicken in Japanese teriyaki sauce with sesame seeds", type: "nonveg" },
-            { category: "Asian", name: "Schezwan Chicken", description: "Wok-tossed chicken in fiery Schezwan sauce with bell peppers", type: "nonveg" },
-            { category: "Asian", name: "Pad Thai", description: "Stir-fried rice noodles with peanuts, bean sprouts and lime", type: "veg" },
+            { category: "Biryani & Rice", name: "Potato Kala Masala Ka Biryani (Veg)", price: "300", type: "veg", desc: "Red potato cooked with gingelly barista & coconut" },
+            { category: "Biryani & Rice", name: "Kala Masala Chicken Biryani", price: "350", type: "nonveg", desc: "Confit rooster cooked with barista and gingelly" },
+            { category: "Biryani & Rice", name: "Saphed Mutton Ka Biryani", price: "425", type: "nonveg", desc: "Slow cooked mutton with yoghurt & cashew" },
+            { category: "Biryani & Rice", name: "Veg Pot Biryani Bamboo Biryani", price: "350", type: "veg", desc: "" },
+            { category: "Biryani & Rice", name: "Kala Masala Mutton Biryani", price: "425", type: "nonveg", desc: "" },
+            { category: "Biryani & Rice", name: "Thecha Chicken Biryani", price: "300", type: "nonveg", desc: "" },
+            { category: "Biryani & Rice", name: "Steam Rice", price: "150", type: "veg", desc: "" },
+            { category: "Biryani & Rice", name: "Jeera Rice", price: "180", type: "veg", desc: "" },
+            { category: "Biryani & Rice", name: "Thecha Mutton Biryani", price: "450", type: "nonveg", desc: "" },
+            { category: "Biryani & Rice", name: "Thecha Seafood Biryani", price: "APS", type: "nonveg", desc: "" },
+            { category: "Biryani & Rice", name: "Pot Biryani Bamboo Biryani (Chicken/Mutton/Fish/Prawns)", price: "350/425/APS/450", type: "nonveg", desc: "" },
 
             // Rice & Bowls
-            { category: "Rice & Bowls", name: "Jeera Rice", description: "Cumin-flavored basmati rice tempered with ghee", type: "veg" },
-            { category: "Rice & Bowls", name: "Steamed Rice", description: "Perfectly cooked plain basmati rice", type: "veg" },
-            { category: "Rice & Bowls", name: "Fried Rice", description: "Indo-Chinese style vegetable fried rice with soy sauce", type: "veg" },
-            { category: "Rice & Bowls", name: "Schezwan Fried Rice", description: "Spicy Schezwan-style fried rice with mixed vegetables", type: "veg" },
-            { category: "Rice & Bowls", name: "Mushroom Rice", description: "Basmati rice with sautéed mushrooms and herbs", type: "veg" },
+            { category: "Rice & Bowls", name: "Edamame Brown Rice (Veg)", price: "320", type: "veg", desc: "Napa cabbage, bok choy, broccoli, zucchini, carrot" },
+            { category: "Rice & Bowls", name: "Malaysian Pot Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "With gravy on pot" },
+            { category: "Rice & Bowls", name: "Manfon Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Chicken Korean Pot Rice", price: "300", type: "nonveg", desc: "" },
+            { category: "Rice & Bowls", name: "XO Fried Rice / Chicken Paragon Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Thai Chilli Basil Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Crab Meat Rice", price: "300", type: "nonveg", desc: "" },
+            { category: "Rice & Bowls", name: "Lamb Shaoxing Rice", price: "300", type: "nonveg", desc: "" },
+            { category: "Rice & Bowls", name: "Chilli Korean Chicken Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Jasmine Rice", price: "300", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Corn Spanish Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Paragon Rice (Veg/Chicken)", price: "300/350", type: "veg", desc: "" },
+            { category: "Rice & Bowls", name: "Thai Pineapple Rice", price: "350", type: "veg", desc: "" },
 
             // Noodles
-            { category: "Noodles", name: "Veg Noodles", description: "Stir-fried vegetables with egg-free noodles in soy sauce", type: "veg" },
-            { category: "Noodles", name: "Chicken Noodles", description: "Noodles tossed with chicken strips and vegetables", type: "nonveg" },
-            { category: "Noodles", name: "Schezwan Noodles", description: "Fiery Schezwan-style noodles with bell peppers and garlic", type: "veg" },
-            { category: "Noodles", name: "Hakka Noodles", description: "Classic Indo-Chinese Hakka noodles with fresh vegetables", type: "veg" },
-            { category: "Noodles", name: "Egg Noodles", description: "Wok-fried noodles with scrambled eggs and spring onions", type: "nonveg" },
+            { category: "Noodles", name: "Yang Chow Noodles (Veg/Chicken)", price: "320/350", type: "veg", desc: "Carrot, broccoli, zucchini, napa" },
+            { category: "Noodles", name: "Hot Bunchai Noodle (Veg/Chicken)", price: "250/300", type: "veg", desc: "Carrot, broccoli, zucchini, napa" },
+            { category: "Noodles", name: "Cartoonish Noodle (Veg/Chicken)", price: "280/300", type: "veg", desc: "" },
+            { category: "Noodles", name: "Don Don Noodle (Veg/Chicken)", price: "300/350", type: "veg", desc: "Carrot, broccoli, zucchini, napa" },
+            { category: "Noodles", name: "Seafood Dore Noodles", price: "375", type: "nonveg", desc: "Carrot, broccoli, zucchini, napa" },
+            { category: "Noodles", name: "Malaysian Flat Noodles (Veg/Chicken)", price: "325/350", type: "veg", desc: "Vibrant mix of Malay, Chinese flavours" },
+            { category: "Noodles", name: "Japchae Glass Noodles (Veg/Chicken)", price: "350/400", type: "veg", desc: "Starch glass noodles (dangmyeon)" },
+            { category: "Noodles", name: "Pattaya Noodles (Veg/Chicken)", price: "400/450", type: "veg", desc: "" },
+
+            // Accompaniments
+            { category: "Accompaniments", name: "Veg Raita", price: "150", type: "veg", desc: "" },
+            { category: "Accompaniments", name: "Boondi Raita", price: "150", type: "veg", desc: "" },
+            { category: "Accompaniments", name: "Pineapple Raita", price: "150", type: "veg", desc: "" },
+            { category: "Accompaniments", name: "Roasted Papad", price: "40", type: "veg", desc: "" },
+            { category: "Accompaniments", name: "Fry Papad", price: "40", type: "veg", desc: "" },
+            { category: "Accompaniments", name: "Masala Papad", price: "80", type: "veg", desc: "" },
+
+            // Mocktails
+            { category: "Mocktails", name: "Green Mint Mojito", price: "100", type: "veg", desc: "" },
+            { category: "Mocktails", name: "Blue Lagoon", price: "100", type: "veg", desc: "" },
+            { category: "Mocktails", name: "Kiwi Sunshine", price: "100", type: "veg", desc: "" },
+            { category: "Mocktails", name: "Fruit Punch", price: "100", type: "veg", desc: "" },
+            { category: "Mocktails", name: "Lemon Ice Tea", price: "150", type: "veg", desc: "" },
+
+            // Beverages
+            { category: "Beverages", name: "Madras Coffee", price: "60", type: "veg", desc: "" },
+            { category: "Beverages", name: "Nescafe Coffee", price: "80", type: "veg", desc: "" },
+            { category: "Beverages", name: "Cold Coffee", price: "100", type: "veg", desc: "" },
+            { category: "Beverages", name: "Mineral Water", price: "30", type: "veg", desc: "" },
+            { category: "Beverages", name: "Fresh Lime Water", price: "30", type: "veg", desc: "" },
+            { category: "Beverages", name: "Fresh Lime Soda", price: "50", type: "veg", desc: "" },
+            { category: "Beverages", name: "Cold Drinks", price: "50", type: "veg", desc: "" },
+
+            // Shakes
+            { category: "Shakes", name: "Vanilla Milkshake", price: "150", type: "veg", desc: "Smooth, classic, and made with vanilla ice cream" },
+            { category: "Shakes", name: "Chocolate Milkshake", price: "150", type: "veg", desc: "Rich and creamy, often topped with chocolate syrup" },
+            { category: "Shakes", name: "Strawberry Milkshake", price: "150", type: "veg", desc: "Sweet and fruity, made using fresh strawberries or strawberry syrup" },
+            { category: "Shakes", name: "Mango Milkshake", price: "200", type: "veg", desc: "A highly popular summer favourite made with ripe mango pulp" },
+            { category: "Shakes", name: "Banana Milkshake", price: "150", type: "veg", desc: "Thick, naturally sweet, and very filling" },
+            { category: "Shakes", name: "Blueberry Milkshake", price: "200", type: "veg", desc: "Refreshing with a distinct vibrant colour" },
+            { category: "Shakes", name: "Apple / Chikoo (Sapota) Milkshake", price: "200", type: "veg", desc: "Popular, dense fruit shakes" },
+            { category: "Shakes", name: "Oreo Milkshake", price: "150", type: "veg", desc: "Packed with crunchy, blended Oreo cookies and vanilla ice cream" },
+            { category: "Shakes", name: "KitKat / Snickers Milkshake", price: "150", type: "veg", desc: "Chocolate shakes blended with your favourite candy bars" },
+            { category: "Shakes", name: "Lotus Biscoff Milkshake", price: "150", type: "veg", desc: "Features a distinct deep, caramelized cookie flavour" },
+            { category: "Shakes", name: "Butterscotch Milkshake", price: "150", type: "veg", desc: "Sweet, buttery, and exceptionally creamy" },
+            { category: "Shakes", name: "Dry Fruit / Kaju Badam Milkshake", price: "175", type: "veg", desc: "A highly nutritious blend of cashews, almonds, pistachios, and dates" },
+            { category: "Shakes", name: "Pistachio (Pista) Milkshake", price: "175", type: "veg", desc: "Mildly sweet, nutty, and luxuriously rich" },
+            { category: "Shakes", name: "Sharjah Shake", price: "175", type: "veg", desc: "A famous South Indian milkshake made with frozen milk, small sweet bananas, and malted food drinks like Boost or Horlicks" },
+            { category: "Shakes", name: "Coffee Milkshake", price: "175", type: "veg", desc: "The perfect frothy combination of caffeine and creamy sweetness" },
+            { category: "Shakes", name: "Peanut Butter Milkshake", price: "175", type: "veg", desc: "A protein-heavy shake with a strong, savoury-sweet flavour" },
 
             // Desserts
-            { category: "Desserts", name: "Gulab Jamun", description: "Deep-fried milk dumplings soaked in rose-flavored sugar syrup", type: "veg" },
-            { category: "Desserts", name: "Rasmalai", description: "Soft cottage cheese patties in saffron and cardamom milk", type: "veg" },
-            { category: "Desserts", name: "Chocolate Lava Cake", description: "Warm dark chocolate cake with a molten chocolate center", type: "veg" },
-            { category: "Desserts", name: "Cheesecake", description: "Classic New York-style baked cheesecake with berry compote", type: "veg" },
-            { category: "Desserts", name: "Tiramisu", description: "Italian coffee-flavored dessert with mascarpone and cocoa", type: "veg" },
-            { category: "Desserts", name: "Gulab Jamun Scoop", description: "Gulab jamun served with vanilla ice cream and rose syrup", type: "veg" },
-            { category: "Desserts", name: "Mango Kulfi", description: "Traditional Indian ice cream with Alphonso mango and pistachios", type: "veg" }
+            { category: "Desserts", name: "Fried Vanilla Ice Cream With Caramel Sauce", price: "300", type: "veg", desc: "" },
+            { category: "Desserts", name: "Ginger Cake", price: "300", type: "veg", desc: "" },
+            { category: "Desserts", name: "Sticky Mango Rice With Assorted Fruits", price: "300", type: "veg", desc: "" }
         ];
+
+        /* Category tab order (matches the latest Non-AC Menu PDF) */
+        const menuCategoryOrder = [
+            'Soups & Rice Bowls', 'Salads', 'Veg Tandoor Appetizer', 'Non-Veg Tandoor Appetizer',
+            'Seafood Malwani Grills', 'Veg Small Plates Asian', 'Non-Veg Small Plates Asian',
+            'Dim Sum & Bao', 'Veg Indian Mains', 'Non-Veg Indian Mains', 'Veg Mains Asian',
+            'Non-Veg Mains Asian', 'Indian Breads', 'Biryani & Rice', 'Rice & Bowls', 'Noodles',
+            'Accompaniments', 'Mocktails', 'Beverages', 'Shakes', 'Desserts'
+        ];
+
+        /* Explore Our Menu — home preview categories */
+        const previewCategories = [
+            { name: 'Soups & Rice Bowls', mark: 'S', tagline: 'Hearty broths & comfort bowls' },
+            { name: 'Salads', mark: 'A', tagline: 'Fresh, vibrant & light' },
+            { name: 'Tandoor', mark: 'T', tagline: 'Smoky clay-oven classics' },
+            { name: 'Indian Mains', mark: 'I', tagline: 'Rich gravies & soul food' },
+            { name: 'Asian', mark: 'A', tagline: 'Wok-tossed indulgence' },
+            { name: 'Biryani & Rice', mark: 'B', tagline: 'Aromatic dum kitchens' },
+            { name: 'Rice & Bowls', mark: 'R', tagline: 'Wholesome one-pot meals' },
+            { name: 'Noodles', mark: 'N', tagline: 'Stir-fried to perfection' },
+            { name: 'Beverages', mark: 'B', tagline: 'Sips for every craving' },
+            { name: 'Shakes', mark: 'M', tagline: 'Thick, creamy & dreamy' },
+            { name: 'Desserts', mark: 'D', tagline: 'The sweet finale' }
+        ];
+
+        /* =====================================================================
+           EXPLORE OUR MENU PREVIEW
+           ===================================================================== */
+        function escapeHtml(str) {
+            var div = document.createElement('div');
+            div.appendChild(document.createTextNode(str));
+            return div.innerHTML;
+        }
+
+        function initPreview() {
+            var grid = document.getElementById('previewGrid');
+            if (!grid) return;
+
+            grid.innerHTML = previewCategories.map(function (cat) {
+                return '<div class="preview-card">' +
+                    '<div class="preview-card-mark" aria-hidden="true">' + cat.mark + '</div>' +
+                    '<div class="preview-card-name">' + escapeHtml(cat.name) + '</div>' +
+                    '<div class="preview-card-tagline">' + cat.tagline + '</div>' +
+                    '</div>';
+            }).join('');
+        }
 
         /* =====================================================================
            OPENING ANIMATION
@@ -2223,10 +2657,32 @@
             var currentCategory = 'all';
             var searchQuery = '';
 
+            function formatPrice(price) {
+                if (!price) return '';
+                if (/^aps$/i.test(price)) return 'APS';
+                return '\u20B9' + price;
+            }
+
+            function renderTabs() {
+                var buttons = ['<button class="menu-tab active" data-category="all" role="tab" aria-selected="true">All</button>'];
+                menuCategoryOrder.forEach(function (cat) {
+                    buttons.push('<button class="menu-tab" data-category="' + escapeHtml(cat) + '" role="tab" aria-selected="false">' + escapeHtml(cat) + '</button>');
+                });
+                tabs.innerHTML = buttons.join('');
+            }
+
             function renderMenu() {
                 var filtered = menuItems.filter(function (item) {
                     var matchCategory = currentCategory === 'all' || item.category === currentCategory;
-                    var matchSearch = !searchQuery || item.name.toLowerCase().indexOf(searchQuery) !== -1 || item.description.toLowerCase().indexOf(searchQuery) !== -1 || item.category.toLowerCase().indexOf(searchQuery) !== -1;
+                    var itemName = (item.name || '').toLowerCase();
+                    var itemDesc = (item.desc || '').toLowerCase();
+                    var itemCat = (item.category || '').toLowerCase();
+                    var itemPrice = (item.price || '').toLowerCase();
+                    var matchSearch = !searchQuery ||
+                        itemName.indexOf(searchQuery) !== -1 ||
+                        itemDesc.indexOf(searchQuery) !== -1 ||
+                        itemCat.indexOf(searchQuery) !== -1 ||
+                        itemPrice.indexOf(searchQuery) !== -1;
                     return matchCategory && matchSearch;
                 });
 
@@ -2236,21 +2692,18 @@
                 }
 
                 grid.innerHTML = filtered.map(function (item) {
+                    var descHtml = item.desc
+                        ? '<p class="menu-card-desc">' + escapeHtml(item.desc) + '</p>'
+                        : '';
                     return '<div class="menu-card">' +
                         '<div class="menu-card-header">' +
                         '<h4 class="menu-card-name">' + escapeHtml(item.name) + '</h4>' +
                         '<div class="menu-card-type ' + item.type + '" title="' + (item.type === 'veg' ? 'Vegetarian' : 'Non-Vegetarian') + '"></div>' +
                         '</div>' +
-                        '<p class="menu-card-desc">' + escapeHtml(item.description) + '</p>' +
-                        '<p class="menu-card-price">Price: Coming Soon</p>' +
+                        descHtml +
+                        '<p class="menu-card-price">' + formatPrice(item.price) + '</p>' +
                         '</div>';
                 }).join('');
-            }
-
-            function escapeHtml(str) {
-                var div = document.createElement('div');
-                div.appendChild(document.createTextNode(str));
-                return div.innerHTML;
             }
 
             // Tabs
@@ -2279,6 +2732,7 @@
                 });
             }
 
+            renderTabs();
             renderMenu();
         }
 
@@ -2287,6 +2741,7 @@
            ===================================================================== */
         document.addEventListener('DOMContentLoaded', function () {
             initOpeningAnimation();
+            initPreview();
             initHeaderScroll();
             initActiveNav();
             initSmoothScroll();
