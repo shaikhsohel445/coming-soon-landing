@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+    <url>
+        <loc>https://aromahospitality.co.in/</loc>
+        <lastmod>2026-09-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://aromahospitality.co.in/images/og-home.jpg</image:loc>
+            <image:title>Elite Aroma's Café &amp; Restaurant — Kalyan West</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://aromahospitality.co.in/images/gallery/chicken-kala-masala-biryani-800.webp</image:loc>
+            <image:title>Chicken Kala Masala Biryani at Elite Aroma's Café &amp; Restaurant</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://aromahospitality.co.in/images/gallery/allahabadi-paneer-tikka-800.webp</image:loc>
+            <image:title>Allahabadi Paneer Tikka at Elite Aroma's Café &amp; Restaurant</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://aromahospitality.co.in/images/gallery/cafe-ambience-03-800.webp</image:loc>
+            <image:title>Dining ambience at Elite Aroma's Café &amp; Restaurant</image:title>
+        </image:image>
+    </url>
+
+    <url>
+        <loc>https://aromahospitality.co.in/gallery</loc>
+        <lastmod>2026-09-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+</urlset>
