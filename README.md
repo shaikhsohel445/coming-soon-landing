@@ -33,7 +33,7 @@ coming-soon/
 ├── js/
 │   └── script.js
 ├── images/
-│   ├── logo.jpeg
+│   ├── newlogo.png
 │   ├── hero-image.jpeg
 │   └── favicon.ico
 └── README.md
@@ -62,7 +62,7 @@ python3 -m http.server 8080
 | Launch date             | `launchDate`        | `'2027-01-01T00:00:00'`         |
 | Company name            | `companyName`       | `'Your Company'`                |
 | Website / tab title     | `websiteTitle`      | `'Coming Soon — My Brand'`      |
-| Logo image path         | `logoPath`          | `'images/logo.jpeg'`            |
+| Logo image path         | `logoPath`          | `'images/newlogo.png'`          |
 | Hero image path         | `heroImagePath`     | `'images/hero-image.jpeg'`      |
 | WhatsApp number         | `whatsappNumber`    | `'14155552671'`                 |
 | WhatsApp message        | `whatsappMessage`   | `'Hello! I\'m interested…'`     |
@@ -78,7 +78,7 @@ python3 -m http.server 8080
 
 Simply overwrite the files in `images/` (or point `logoPath` / `heroImagePath` in the config to your own files):
 
-- `logo.jpeg` — company logo, **PNG/JPEG/SVG**, max height 100px (auto-scales on mobile)
+- `newlogo.png` — company logo, **PNG/JPEG/SVG**, max height 100px (auto-scales on mobile)
 - `hero-image.jpeg` — the large preview illustration (laptop mockup / dashboard / abstract artwork; display height is capped at 62vh so portrait images also look balanced)
 - `favicon.ico` — browser tab icon
 

@@ -16,7 +16,7 @@ const CONFIG = {
     /* Company / brand */
     companyName: 'Your Company',
     websiteTitle: 'Coming Soon — We Are Almost Ready',
-    logoPath: 'images/logo.jpeg',
+    logoPath: 'images/newlogo.png',
     logoAlt: 'Your Company logo',
 
     /* Hero image (preview of the future website) */

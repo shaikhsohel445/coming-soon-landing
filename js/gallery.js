@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Elite Aroma Café & Restaurant — gallery engine
+   Elite Aroma’s Café & Restaurant — gallery engine
    Vanilla JS, no dependencies, ~7 KB. Each page loads only what it needs:
 
      #previewGallery  → homepage preview (8 curated photos + lightbox)
@@ -53,7 +53,7 @@
                 if (categories[j].match === photo.cats[i]) return categories[j].label;
             }
         }
-        return 'Elite Aroma';
+        return 'Elite Aroma’s Café & Restaurant';
     }
 
     /* ---------------------------------------------------------------------

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Elite Aroma Café & Restaurant — shared page shell
+   Elite Aroma’s Café & Restaurant — shared page shell
    Header behaviour, mobile navigation, smooth in-page scrolling, scroll
    reveals and the homepage's opening/welcome sequences. Every function is
    guarded, so a page only gets the behaviour it actually has markup for.
